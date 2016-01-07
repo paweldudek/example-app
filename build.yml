@@ -1,0 +1,6 @@
+Workspace: ExampleApp
+Scheme: ExampleApp
+
+Specs:
+  SimulatorVersion: 9.2
+  Device: iPhone 6
