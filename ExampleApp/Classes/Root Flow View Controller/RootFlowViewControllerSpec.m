@@ -11,6 +11,10 @@
 #import "User.h"
 #import "HCArgumentCaptor.h"
 #import "AlbumsViewController.h"
+#import "AlbumPhotosViewController.h"
+#import "Album.h"
+#import "ApplicationController.h"
+#import "UserController.h"
 
 SpecBegin(RootFlowViewController)
 
@@ -18,8 +22,14 @@ describe(@"RootFlowViewController", ^{
 
     __block RootFlowViewController *sut;
 
+    __block id mockUserController;
+
     beforeEach(^{
-        sut = [[RootFlowViewController alloc] init];
+        mockUserController = mock([UserController class]);
+        id mockApplicationController = mock([ApplicationController class]);
+        [given([mockApplicationController userController]) willReturn:mockUserController];
+
+        sut = [[RootFlowViewController alloc] initWithApplicationController:mockApplicationController];
     });
 
     afterEach(^{
@@ -101,14 +111,18 @@ describe(@"RootFlowViewController", ^{
 
                     describe(@"users provider", ^{
 
-                        __block id <UsersProvider> usersProvider;
+                        __block AllUsersProvider *usersProvider;
 
                         action(^{
-                            usersProvider = [usersViewController usersProvider];
+                            usersProvider = (id) [usersViewController usersProvider];
                         });
 
                         it(@"should be a all users provider", ^{
                             expect(usersProvider).to.beKindOf([AllUsersProvider class]);
+                        });
+
+                        it(@"should have the user controller from application controller", ^{
+                            expect(usersProvider.userController).to.equal(mockUserController);
                         });
                     });
                 });
@@ -148,6 +162,46 @@ describe(@"RootFlowViewController", ^{
 
             it(@"should be an albums view controller", ^{
                 expect(albumsViewController).to.beKindOf([AlbumsViewController class]);
+            });
+
+            it(@"should have a delegate", ^{
+                expect(albumsViewController.delegate).to.equal(sut);
+            });
+        });
+    });
+
+    describe(@"albums view controller delegate", ^{
+
+        IN_MEMORY_CORE_DATA
+
+        __block Album *album;
+        __block id mockViewControllerPresenter;
+
+        beforeEach(^{
+            album = [Album specsEmptyObject];
+
+            mockViewControllerPresenter = mockProtocol(@protocol(ViewControllerPresenter));
+            sut.viewControllerPresenter = mockViewControllerPresenter;
+        });
+
+        action(^{
+            [sut albumsViewController:nil didSelectAlbum:album];
+        });
+
+        describe(@"last presented view controller", ^{
+
+            __block AlbumPhotosViewController *albumPhotosViewController;
+
+            action(^{
+                HCArgumentCaptor *argumentCaptor = [HCArgumentCaptor new];
+                [verify(mockViewControllerPresenter) pushViewController:(id) argumentCaptor
+                                                               animated:YES
+                                                             completion:nil];
+                albumPhotosViewController = [argumentCaptor value];
+            });
+
+            it(@"should be an albums view controller", ^{
+                expect(albumPhotosViewController).to.beKindOf([AlbumPhotosViewController class]);
             });
         });
     });

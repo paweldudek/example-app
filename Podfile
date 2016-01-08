@@ -11,6 +11,7 @@ target 'ExampleApp' do
   pod 'MTDates'
   pod 'PureLayout'
   pod 'FastImageCache'
+  pod 'KZPropertyMapper'
 end
 
 target 'ExampleAppSpecs' do

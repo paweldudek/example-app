@@ -11,6 +11,6 @@
 
 @property(nonatomic, strong) NSString *email;
 
-@property(nonatomic, strong) NSString *identifier;
+@property(nonatomic, strong) NSNumber *identifier;
 
 @end

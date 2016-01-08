@@ -1,0 +1,24 @@
+[
+  {
+    "id": 42,
+    "name": "Fixture Name 1",
+    "username": "Fixture Username 1",
+    "email": "fixutre@email1.com",
+    "company": {
+      "name": "Romaguera-Crona",
+      "catchPhrase": "Multi-layered client-server neural-net",
+      "bs": "harness real-time e-markets"
+    }
+  },
+  {
+    "id": 43,
+    "name": "Fixture Name 2",
+    "username": "Fixture Username 2",
+    "email": "fixutre@email2.com",
+    "company": {
+      "name": "Deckow-Crist",
+      "catchPhrase": "Proactive didactic contingency",
+      "bs": "synergize scalable supply-chains"
+    }
+  }
+]

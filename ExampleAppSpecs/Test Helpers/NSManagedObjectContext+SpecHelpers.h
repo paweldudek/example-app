@@ -14,6 +14,8 @@
 
 + (void)specSave;
 
++ (void)specReset;
+
 @end
 
 #define IN_MEMORY_CORE_DATA beforeEach(^{[NSManagedObjectContext setupSpecsInThreadManagedObjectContext];}); afterEach(^{[NSManagedObjectContext cleanupSpecsManagedObjectContext];});

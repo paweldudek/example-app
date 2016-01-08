@@ -11,12 +11,33 @@
     self = [super init];
     if (self) {
         _usersProvider = usersProvider;
-        self.title = NSLocalizedString(@"Users", nil);
+        _usersProvider.delegate = self;
+        self.title = _usersProvider.title;
     }
 
     return self;
 }
 
-#pragma mark -
+#pragma mark - UIViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    [self.usersProvider updateContent];
+}
+
+#pragma mark - Content Provider Delegate
+
+- (void)contentProviderWillBeginUpdatingData:(id <ContentProvider>)contentProvider {
+
+}
+
+- (void)contentProviderDidFinishUpdatingData:(id <ContentProvider>)contentProvider {
+
+}
+
+- (void)contentProviderDidUpdateContent:(id <ContentProvider>)contentProvider {
+
+}
 
 @end

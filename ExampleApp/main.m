@@ -9,8 +9,21 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
-int main(int argc, char * argv[]) {
+int main(int argc, char *argv[]) {
+    int returnValue;
+
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+        BOOL inTests = (NSClassFromString(@"SenTestCase") != nil || NSClassFromString(@"XCTest") != nil);
+
+        if (inTests) {
+            //use a special empty delegate when we are inside the tests
+            returnValue = UIApplicationMain(argc, argv, nil, @"TestAppDelegate");
+        }
+        else {
+            //use the normal delegate
+            returnValue = UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+        }
     }
+
+    return returnValue;
 }

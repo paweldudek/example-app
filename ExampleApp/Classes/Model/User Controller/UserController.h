@@ -7,4 +7,6 @@
 
 @property(nonatomic, strong) NSOperationQueue *operationQueue;
 
+- (void)updateUsersWithCompletion:(void (^)(NSError *))completion;
+
 @end

@@ -39,4 +39,8 @@ NSString *MNGInMemoryManagedObjectContextKey = @"MNGInMemoryManagedObjectContext
     NSAssert(error == nil, @"Attempted to save MOC, but an error occured! Check your tests configuration");
 }
 
++ (void)specReset {
+    [[self specsManagedObjectContext] reset];
+}
+
 @end

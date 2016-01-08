@@ -3,11 +3,16 @@
 */
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "ContentProvider.h"
 
 @class User;
 @class UsersViewController;
 
-@protocol UsersProvider <NSObject>
+@protocol UsersProvider <ContentProvider>
+
+- (NSUInteger)numberOfUsers;
+
+- (User *)userAtIndex:(NSUInteger)index;
 
 @end
 
@@ -18,7 +23,7 @@
 
 @end
 
-@interface UsersViewController : UIViewController
+@interface UsersViewController : UIViewController <ContentProviderDelegate>
 
 @property(nonatomic, weak) id <UsersViewControllerDelegate> delegate;
 

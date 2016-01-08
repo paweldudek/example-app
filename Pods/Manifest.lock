@@ -1,6 +1,7 @@
 PODS:
   - Expecta (1.0.5)
   - FastImageCache (1.3)
+  - KZPropertyMapper (2.6)
   - MTDates (1.0.3)
   - OCHamcrest (5.1.0)
   - OCMockito (3.0.1):
@@ -11,6 +12,7 @@ PODS:
 DEPENDENCIES:
   - Expecta
   - FastImageCache
+  - KZPropertyMapper
   - MTDates
   - OCMockito
   - PureLayout
@@ -29,6 +31,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
   FastImageCache: 25f214fd46405daca3d1995d783fb83b9036c62e
+  KZPropertyMapper: bcaabe1ec5b4368acb8092faf40666096ba9bb23
   MTDates: c65affdfb7b34001c5c9e3fe0beac4b1b8334a58
   OCHamcrest: abcfbf4ebd75d5aadbcc729cff0cb648faf2d1b0
   OCMockito: 9eee3c61e42f7cb8aa015d66f8cc16849701d973

@@ -5,6 +5,7 @@
 #import "AppDelegate.h"
 #import "RootFlowViewController.h"
 #import "PersistenceController.h"
+#import "ApplicationController.h"
 
 @implementation AppDelegate
 
@@ -21,8 +22,9 @@
 
 #pragma mark - UIApplication Delegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window.rootViewController = [[RootFlowViewController alloc] init];
+- (BOOL)application:(__unused UIApplication *)application didFinishLaunchingWithOptions:(__unused NSDictionary *)launchOptions {
+    ApplicationController *applicationController = [[ApplicationController alloc] initWithPersistenceController:self.persistenceController];
+    self.window.rootViewController = [[RootFlowViewController alloc] initWithApplicationController:applicationController];
     [self.window makeKeyAndVisible];
 
     return YES;
@@ -91,21 +93,6 @@
     _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     return _managedObjectContext;
-}
-
-#pragma mark - Core Data Saving support
-
-- (void)saveContext {
-    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
-    if (managedObjectContext != nil) {
-        NSError *error = nil;
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-    }
 }
 
 @end

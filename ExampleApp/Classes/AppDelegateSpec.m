@@ -3,6 +3,7 @@
 #import "AppDelegate.h"
 #import "RootFlowViewController.h"
 #import "PersistenceController.h"
+#import "ApplicationController.h"
 
 SpecBegin(AppDelegate)
 
@@ -24,8 +25,23 @@ describe(@"AppDelegate", ^{
 
     describe(@"application did finish launching", ^{
 
+        __block id mockWindow;
+        __block id mockPersistenceController;
+
+        beforeEach(^{
+            mockWindow = mock([UIWindow class]);
+            sut.window = mockWindow;
+
+            mockPersistenceController = mock([PersistenceController class]);
+            sut.persistenceController = mockPersistenceController;
+        });
+
         action(^{
             [sut application:mock([UIApplication class]) didFinishLaunchingWithOptions:nil];
+        });
+
+        it(@"should tell the window to become key and visible", ^{
+            [verify(mockWindow) makeKeyAndVisible];
         });
 
         describe(@"root view controller", ^{
@@ -33,7 +49,9 @@ describe(@"AppDelegate", ^{
             __block RootFlowViewController *rootViewController;
 
             action(^{
-                rootViewController = (RootFlowViewController *) [sut.window rootViewController];
+                HCArgumentCaptor *argumentCaptor = [HCArgumentCaptor new];
+                [verify(mockWindow) setRootViewController:(id) argumentCaptor];
+                rootViewController = [argumentCaptor value];
             });
 
             it(@"should be a root flow view controller", ^{
@@ -42,12 +60,18 @@ describe(@"AppDelegate", ^{
 
             describe(@"application controller", ^{
 
-                action(^{
+                __block ApplicationController *applicationController;
 
+                action(^{
+                    applicationController = [rootViewController applicationController];
+                });
+
+                it(@"should be an application controller", ^{
+                    expect(applicationController).to.beKindOf([ApplicationController class]);
                 });
 
                 it(@"should have the persistence controller", ^{
-                    expect(NO).to.beTruthy();
+                    expect(applicationController.persistenceController).to.equal(mockPersistenceController);
                 });
             });
         });

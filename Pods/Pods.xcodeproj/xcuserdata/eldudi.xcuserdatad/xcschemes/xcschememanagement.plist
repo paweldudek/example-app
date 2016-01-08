@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>KZPropertyMapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MTDates.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,7 +57,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0C735D0728CDC8D900E2365F70477166</key>
+		<key>01D52635B7FA66EB3D46A9006D145C7C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,7 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AF50F84210237A17836B64A956248602</key>
+		<key>88E60C09FD6706158314FB302BD62F55</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CEB5A8EA50B264CCB4455372ED4D3AF1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
