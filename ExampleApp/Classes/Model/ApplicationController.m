@@ -13,7 +13,7 @@
     if (self) {
         _persistenceController = persistenceController;
 
-        self.userController = [[UserController alloc] init];
+        self.userController = [[UserController alloc] initWithPersistenceController:_persistenceController];
     }
 
     return self;

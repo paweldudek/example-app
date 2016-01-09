@@ -6,6 +6,17 @@
 
 @implementation ContainerView
 
+#pragma mark - UIView
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+
+    self.containedView.frame = self.bounds;
+    self.overlayView.frame = self.bounds;
+}
+
+#pragma mark - Overridden Setters
+
 - (void)setContainedView:(UIView *)containedView {
     [_containedView removeFromSuperview];
     _containedView = containedView;

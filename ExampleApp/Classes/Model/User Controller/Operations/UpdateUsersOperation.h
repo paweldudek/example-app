@@ -5,12 +5,20 @@
 #import "AbstractAsynchronousOperation.h"
 
 @class UsersUpdater;
+@class NetworkLayer;
+@class PersistenceController;
 
 
 @interface UpdateUsersOperation : AbstractAsynchronousOperation
 
+@property(nonatomic, readonly) PersistenceController *persistenceController;
+
 @property(nonatomic, strong) UsersUpdater *usersUpdater;
 
 @property(nonatomic, copy) void (^updateCompletion)(NSError *);
+
+@property(nonatomic, strong) NetworkLayer *networkLayer;
+
+- (instancetype)initWithPersistenceController:(PersistenceController *)persistenceController;
 
 @end
