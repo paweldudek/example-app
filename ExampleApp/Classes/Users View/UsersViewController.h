@@ -23,7 +23,7 @@
 
 @end
 
-@interface UsersViewController : UIViewController <ContentProviderDelegate>
+@interface UsersViewController : UIViewController <ContentProviderDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic, weak) id <UsersViewControllerDelegate> delegate;
 

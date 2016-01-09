@@ -57,6 +57,7 @@
 		B27A9E3F24A90F8A24AB4FFD /* UpdateUsersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9B425777EA8635CCE128 /* UpdateUsersOperation.m */; };
 		B27A9E603E493E396631E473 /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9135C23123D4C3DEB70B /* UsersViewController.m */; };
 		B27A9E9B654792310F00318F /* ApplicationControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A96735425F802D9493879 /* ApplicationControllerSpec.m */; };
+		B27A9F28B13204801F59E79A /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9151D7AC478C63ADCF41 /* Company.m */; };
 		B27A9F61432D3614077DDC22 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9FADB592B90DA022FBFC /* LoadingView.m */; };
 		B27A9FBCFBE0C7F8065E98E3 /* NSFileManager+ExampleApp.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9A2B7853AE39D3544659 /* NSFileManager+ExampleApp.m */; };
 		F7717AE1D2329E1B039A05F0 /* libPods-ExampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD83AA2747D5AA14483732BC /* libPods-ExampleApp.a */; };
@@ -92,6 +93,7 @@
 		B27A90A2276A2C9E7281E5C0 /* AbstractAsynchronousOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractAsynchronousOperation.m; sourceTree = "<group>"; };
 		B27A91328EC1F861CF1AAFE0 /* NetworkLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkLayer.h; sourceTree = "<group>"; };
 		B27A9135C23123D4C3DEB70B /* UsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersViewController.m; sourceTree = "<group>"; };
+		B27A9151D7AC478C63ADCF41 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
 		B27A915FC393D39C90E3357E /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
 		B27A915FF4DA6959DAA10251 /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
 		B27A918C28F157F4D8D5BD43 /* UserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserController.h; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 		B27A9D886EB5BB4541CAE68C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B27A9E1F4AC9F6EA176F3428 /* AlbumPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumPhotosViewController.h; sourceTree = "<group>"; };
 		B27A9E29729716BE081C9E0E /* AbstractAsynchronousOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractAsynchronousOperation.h; sourceTree = "<group>"; };
+		B27A9E445A17E92C325EDEFF /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
 		B27A9E4595007EFD8F871256 /* FakeOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeOperationQueue.m; sourceTree = "<group>"; };
 		B27A9E48B3FA3BA5C4254157 /* NSManagedObject+SpecHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+SpecHelpers.m"; sourceTree = "<group>"; };
 		B27A9F08862E0289B8B12544 /* AlbumPhotosViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumPhotosViewControllerSpec.m; sourceTree = "<group>"; };
@@ -467,6 +470,8 @@
 				B27A98E3CA9A49900BC8CBEE /* ApplicationController.m */,
 				B27A9F22210FD0D28F18806A /* ApplicationController.h */,
 				B27A96735425F802D9493879 /* ApplicationControllerSpec.m */,
+				B27A9151D7AC478C63ADCF41 /* Company.m */,
+				B27A9E445A17E92C325EDEFF /* Company.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -748,6 +753,7 @@
 				B27A963956CA90A13749EA3C /* NetworkLayer+ExampleApp.m in Sources */,
 				B27A98D7EEAF54BA1AA4405F /* UsersNetworkLayerRequest.m in Sources */,
 				B27A9FBCFBE0C7F8065E98E3 /* NSFileManager+ExampleApp.m in Sources */,
+				B27A9F28B13204801F59E79A /* Company.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

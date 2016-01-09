@@ -6,6 +6,7 @@
 #import "User.h"
 #import "NSManagedObject+Convenience.h"
 #import "KZPropertyMapper.h"
+#import "Company.h"
 
 
 @implementation UsersUpdater
@@ -28,6 +29,10 @@
                                    @"id" : KZPropertyT(user, identifier),
                                    @"email" : KZPropertyT(user, email)
                            }];
+
+        NSDictionary *companyDictionary = userDictionary[@"company"];
+        Company *company = [[Company alloc] initWithName:companyDictionary[@"name"] catchphrase:companyDictionary[@"catchPhrase"]];
+        user.company = company;
 
         [deleteCandidates removeObject:user];
     }

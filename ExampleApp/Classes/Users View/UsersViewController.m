@@ -3,6 +3,7 @@
  */
 #import "UsersViewController.h"
 #import "User.h"
+#import "ContainerView.h"
 
 
 @implementation UsersViewController
@@ -19,6 +20,23 @@
 }
 
 #pragma mark - UIViewController
+
+- (void)loadView {
+    [super loadView];
+
+    UITableViewController *viewController = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
+    [self addChildViewController:viewController];
+
+    ContainerView *containerView = [[ContainerView alloc] init];
+    containerView.containedView = viewController.view;
+
+    self.view = containerView;
+
+    [viewController didMoveToParentViewController:self];
+
+    viewController.tableView.delegate = self;
+    viewController.tableView.dataSource = self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,6 +56,16 @@
 
 - (void)contentProviderDidUpdateContent:(id <ContentProvider>)contentProvider {
 
+}
+
+#pragma mark - UITableView Data Source & Delegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.usersProvider.numberOfUsers;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return nil;
 }
 
 @end

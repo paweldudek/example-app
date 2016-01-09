@@ -7,6 +7,7 @@
 #import "PersistenceController.h"
 #import "ApplicationController.h"
 #import "NSFileManager+ExampleApp.h"
+#import "KZPropertyMapper.h"
 
 @implementation AppDelegate
 
@@ -17,6 +18,8 @@
         self.persistenceController = [[PersistenceController alloc] initWithCoreDataStackFolderURL:coreDataURL];
 
         self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+
+        [KZPropertyMapper logIgnoredValues:NO];
     }
 
     return self;

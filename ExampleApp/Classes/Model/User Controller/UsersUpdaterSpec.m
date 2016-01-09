@@ -6,6 +6,7 @@
 #import "User.h"
 #import "NSManagedObject+Convenience.h"
 #import "NSManagedObject+SpecHelpers.h"
+#import "Company.h"
 
 SpecBegin(UsersUpdater)
 
@@ -66,6 +67,27 @@ describe(@"UsersUpdater", ^{
                     it(@"should have an identifier", ^{
                         expect(user.identifier).to.equal(42);
                     });
+
+                    describe(@"company", ^{
+
+                        __block Company *company;
+
+                        action(^{
+                            company = [user company];
+                        });
+
+                        it(@"should be a company", ^{
+                            expect(company).to.beKindOf([Company class]);
+                        });
+
+                        it(@"should have a company name", ^{
+                            expect(company.name).to.equal(@"Fixture Company Name 1");
+                        });
+
+                        it(@"should have a company catch phrase", ^{
+                            expect(company.catchphrase).to.equal(@"Fixture Company Catchphrase 1");
+                        });
+                    });
                 });
 
                 describe(@"second user", ^{
@@ -86,6 +108,27 @@ describe(@"UsersUpdater", ^{
 
                     it(@"should have an identifier", ^{
                         expect(user.identifier).to.equal(43);
+                    });
+
+                    describe(@"company", ^{
+
+                        __block Company *company;
+
+                        action(^{
+                            company = [user company];
+                        });
+
+                        it(@"should be a company", ^{
+                            expect(company).to.beKindOf([Company class]);
+                        });
+
+                        it(@"should have a company name", ^{
+                            expect(company.name).to.equal(@"Fixture Company Name 2");
+                        });
+
+                        it(@"should have a company catch phrase", ^{
+                            expect(company.catchphrase).to.equal(@"Fixture Company Catchphrase 2");
+                        });
                     });
                 });
             });

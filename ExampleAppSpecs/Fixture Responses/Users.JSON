@@ -5,9 +5,8 @@
     "username": "Fixture Username 1",
     "email": "fixutre@email1.com",
     "company": {
-      "name": "Romaguera-Crona",
-      "catchPhrase": "Multi-layered client-server neural-net",
-      "bs": "harness real-time e-markets"
+      "name": "Fixture Company Name 1",
+      "catchPhrase": "Fixture Company Catchphrase 1",
     }
   },
   {
@@ -16,9 +15,8 @@
     "username": "Fixture Username 2",
     "email": "fixutre@email2.com",
     "company": {
-      "name": "Deckow-Crist",
-      "catchPhrase": "Proactive didactic contingency",
-      "bs": "synergize scalable supply-chains"
+      "name": "Fixture Company Name 2",
+      "catchPhrase": "Fixture Company Catchphrase 2",
     }
   }
 ]
