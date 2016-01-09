@@ -10,6 +10,10 @@
 #import "PersistenceController.h"
 
 
+@interface UpdateUsersOperation ()
+@property(nonatomic, strong) id requestIdentifier;
+@end
+
 @implementation UpdateUsersOperation
 
 - (instancetype)initWithPersistenceController:(PersistenceController *)persistenceController {
@@ -19,23 +23,33 @@
 
         self.usersUpdater = [[UsersUpdater alloc] init];
         self.networkLayer = [NetworkLayer exampleAppNetworkLayer];
+
+        self.completionQueue = [NSOperationQueue mainQueue];
     }
 
     return self;
 }
 
+#pragma mark - NSOperation
+
 - (void)start {
     [super start];
 
-    [self.networkLayer makeRequest:[UsersNetworkLayerRequest new]
-                        completion:^(NSData *data, NSURLResponse *response, NSError *error) {
-                            if (error == nil) {
-                                [self parseResponse:data];
-                            }
-                            else {
-                                self.updateCompletion(error);
-                            }
-                        }];
+    self.requestIdentifier = [self.networkLayer makeRequest:[UsersNetworkLayerRequest new]
+                                                 completion:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                     if (error == nil) {
+                                                         [self parseResponse:data];
+                                                     }
+                                                     else {
+                                                         [self finishWithError:error];
+                                                     }
+                                                 }];
+}
+
+- (void)cancel {
+    [super cancel];
+
+    [self.networkLayer cancelRequestWithIdentifier:self.requestIdentifier];
 }
 
 #pragma mark -
@@ -48,6 +62,23 @@
 
     [managedObjectContext performBlockAndWait:^{
         [self.usersUpdater updateUsersWithResponse:parsedData managedObjectContext:managedObjectContext];
+    }];
+
+    [self.persistenceController saveChildContext:managedObjectContext
+                                      completion:^(BOOL succeeded, NSError *error) {
+                                          [self finishWithError:error];
+                                      }];
+}
+
+#pragma mark - Finishing Helpers
+
+
+- (void)finishWithError:(NSError *)error {
+    [self.completionQueue addOperationWithBlock:^{
+        if (self.updateCompletion) {
+            self.updateCompletion(error);
+            [self finishExecution];
+        }
     }];
 }
 

@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PBDCoreDataMigrationAssistant.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ExampleApp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,6 +72,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>23BAFBA1905D2F7643CA22E043BF5C4F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2F501FE84845EAD97B9087DAFCBBEE0E</key>
 		<dict>
 			<key>primary</key>
@@ -77,12 +87,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>88E60C09FD6706158314FB302BD62F55</key>
+		<key>7C466053D2BE9A0F4DAA67914AAE0518</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CEB5A8EA50B264CCB4455372ED4D3AF1</key>
+		<key>898BB0F802CDED207A695DE8A74D7C69</key>
 		<dict>
 			<key>primary</key>
 			<true/>

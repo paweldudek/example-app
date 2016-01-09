@@ -12,6 +12,7 @@ target 'ExampleApp' do
   pod 'PureLayout'
   pod 'FastImageCache'
   pod 'KZPropertyMapper'
+  pod 'PBDCoreDataMigrationAssistant'
 end
 
 target 'ExampleAppSpecs' do

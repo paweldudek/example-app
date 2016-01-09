@@ -19,6 +19,8 @@
 
 @property(nonatomic, strong) NetworkLayer *networkLayer;
 
+@property(nonatomic, strong) NSOperationQueue *completionQueue;
+
 - (instancetype)initWithPersistenceController:(PersistenceController *)persistenceController;
 
 @end

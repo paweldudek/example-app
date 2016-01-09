@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "23BAFBA1905D2F7643CA22E043BF5C4F"
-               BlueprintName = "PureLayout"
+               BlueprintIdentifier = "7C466053D2BE9A0F4DAA67914AAE0518"
+               BlueprintName = "PBDCoreDataMigrationAssistant"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPureLayout.a">
+               BuildableName = "libPBDCoreDataMigrationAssistant.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

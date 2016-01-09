@@ -6,6 +6,7 @@ PODS:
   - OCHamcrest (5.1.0)
   - OCMockito (3.0.1):
     - OCHamcrest (~> 5.1)
+  - PBDCoreDataMigrationAssistant (1.0.2)
   - PureLayout (3.0.1)
   - Specta (1.0.4)
 
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - KZPropertyMapper
   - MTDates
   - OCMockito
+  - PBDCoreDataMigrationAssistant
   - PureLayout
   - Specta (from `https://github.com/taptera/specta`, commit `1ee950e0ec6c115c2cf1c0a9444d7f2b198f3bd4`)
 
@@ -35,6 +37,7 @@ SPEC CHECKSUMS:
   MTDates: c65affdfb7b34001c5c9e3fe0beac4b1b8334a58
   OCHamcrest: abcfbf4ebd75d5aadbcc729cff0cb648faf2d1b0
   OCMockito: 9eee3c61e42f7cb8aa015d66f8cc16849701d973
+  PBDCoreDataMigrationAssistant: 9c080ffa33365dcb1dbaa48243bd592dcd7b567c
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
   Specta: 69bb134672aae190a1379ff91df07dad8dd1f869
 

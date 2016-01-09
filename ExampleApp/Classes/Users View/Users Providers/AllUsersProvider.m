@@ -3,6 +3,9 @@
  */
 #import "AllUsersProvider.h"
 #import "UserController.h"
+#import "NSManagedObject+Convenience.h"
+#import "User.h"
+#import "PersistenceController.h"
 
 
 @implementation AllUsersProvider
@@ -26,8 +29,10 @@
 - (void)updateContent {
     [self.delegate contentProviderWillBeginUpdatingData:self];
 
-    [self.userController updateUsersWithCompletion:^(NSError *error){}];
-
+    [self.userController updateUsersWithCompletion:^(NSError *error) {
+        NSArray *allUsers = [User allFromContext:self.userController.persistenceController.mainThreadManagedObjectContext];
+        NSLog(@"allUsers = %@", allUsers);
+    }];
 }
 
 #pragma mark - Users Provider

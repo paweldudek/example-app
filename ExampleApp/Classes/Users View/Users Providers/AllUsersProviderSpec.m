@@ -30,6 +30,7 @@ describe(@"AllUsersProvider", ^{
 
         beforeEach(^{
             mockDelegate = mockProtocol(@protocol(ContentProviderDelegate));
+            sut.delegate = mockDelegate;
         });
 
         action(^{
@@ -41,7 +42,7 @@ describe(@"AllUsersProvider", ^{
         });
 
         it(@"should tell its users controller to update users", ^{
-            expect(NO).to.beTruthy();
+            [verify(mockUserController) updateUsersWithCompletion:anything()];
         });
 
         describe(@"when updating finishes", ^{

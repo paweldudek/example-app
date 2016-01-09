@@ -4,6 +4,7 @@
 #import "RootFlowViewController.h"
 #import "PersistenceController.h"
 #import "ApplicationController.h"
+#import "NSFileManager+ExampleApp.h"
 
 SpecBegin(AppDelegate)
 
@@ -19,8 +20,22 @@ describe(@"AppDelegate", ^{
         sut = nil;
     });
 
-    it(@"should have a persistence controller", ^{
-        expect(sut.persistenceController).to.beKindOf([PersistenceController class]);
+    describe(@"persistence controller", ^{
+
+        __block PersistenceController *persistenceController;
+
+        action(^{
+            persistenceController = [sut persistenceController];
+        });
+
+        it(@"should be a persistence controller", ^{
+            expect(persistenceController).to.beKindOf([PersistenceController class]);
+        });
+
+        it(@"should have an url", ^{
+            NSURL *coreDataURL = [[[NSFileManager defaultManager] applicationSupportDirectoryURL] URLByAppendingPathComponent:@"CoreData"];
+            expect(persistenceController.coreDataStackFolderURL).to.equal(coreDataURL);
+        });
     });
 
     describe(@"application did finish launching", ^{
@@ -42,6 +57,10 @@ describe(@"AppDelegate", ^{
 
         it(@"should tell the window to become key and visible", ^{
             [verify(mockWindow) makeKeyAndVisible];
+        });
+
+        it(@"should tell its persistence controller to setup core data stack", ^{
+            [verify(mockPersistenceController) setupCoreDataStack];
         });
 
         describe(@"root view controller", ^{

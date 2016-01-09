@@ -44,6 +44,7 @@
 		B27A99B77EE5C4E559BDC145 /* RootFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A99A3B12CFA804A1391A6 /* RootFlowViewController.m */; };
 		B27A9A7CEBDCB243FAF46AA3 /* UsersNetworkLayerRequestSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A978030828AC85C60EB7F /* UsersNetworkLayerRequestSpec.m */; };
 		B27A9A8213A1452441DA58DF /* UserController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9911BD67E7B49F70B425 /* UserController.m */; };
+		B27A9AB62986CCACAB61BB2B /* FakeOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9E4595007EFD8F871256 /* FakeOperationQueue.m */; };
 		B27A9AD93CF4C48A5AB30B02 /* FixtureResponses.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A936D9CC79399A12620D2 /* FixtureResponses.m */; };
 		B27A9B5ACBB3DDE82AC7E7BA /* UsersUpdaterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A96D63D04385AD1FCA662 /* UsersUpdaterSpec.m */; };
 		B27A9B757EC792FFEE03EAF1 /* TestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A975B0EAF589DFD8E4978 /* TestAppDelegate.m */; };
@@ -57,6 +58,7 @@
 		B27A9E603E493E396631E473 /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9135C23123D4C3DEB70B /* UsersViewController.m */; };
 		B27A9E9B654792310F00318F /* ApplicationControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A96735425F802D9493879 /* ApplicationControllerSpec.m */; };
 		B27A9F61432D3614077DDC22 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9FADB592B90DA022FBFC /* LoadingView.m */; };
+		B27A9FBCFBE0C7F8065E98E3 /* NSFileManager+ExampleApp.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9A2B7853AE39D3544659 /* NSFileManager+ExampleApp.m */; };
 		F7717AE1D2329E1B039A05F0 /* libPods-ExampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD83AA2747D5AA14483732BC /* libPods-ExampleApp.a */; };
 /* End PBXBuildFile section */
 
@@ -131,10 +133,13 @@
 		B27A994B57E963FCEA1A9472 /* AlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumsViewController.h; sourceTree = "<group>"; };
 		B27A997A962ABA0B78791CDA /* UsersNetworkLayerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersNetworkLayerRequest.h; sourceTree = "<group>"; };
 		B27A99A3B12CFA804A1391A6 /* RootFlowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootFlowViewController.m; sourceTree = "<group>"; };
+		B27A99E0954A58C8DF1DC36F /* FakeOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeOperationQueue.h; sourceTree = "<group>"; };
 		B27A99E4BAF20B61501F8B06 /* FixtureResponses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixtureResponses.h; sourceTree = "<group>"; };
 		B27A99EA5590D5F4BC2C0944 /* AppDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateSpec.m; sourceTree = "<group>"; };
 		B27A99FC91806FDF233ED928 /* ContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerView.m; sourceTree = "<group>"; };
 		B27A99FD3673434E8B3AB847 /* Specs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Specs.h; sourceTree = "<group>"; };
+		B27A9A2B7853AE39D3544659 /* NSFileManager+ExampleApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ExampleApp.m"; sourceTree = "<group>"; };
+		B27A9A5925277BB427A7A90D /* NSFileManager+ExampleApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+ExampleApp.h"; sourceTree = "<group>"; };
 		B27A9A7026ADE535297AA32B /* AllUsersProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllUsersProvider.h; sourceTree = "<group>"; };
 		B27A9A7727389743B5101A25 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		B27A9ACE86D2E16B1769465F /* NavigationViewControllerPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewControllerPresenter.h; sourceTree = "<group>"; };
@@ -155,6 +160,7 @@
 		B27A9D886EB5BB4541CAE68C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B27A9E1F4AC9F6EA176F3428 /* AlbumPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumPhotosViewController.h; sourceTree = "<group>"; };
 		B27A9E29729716BE081C9E0E /* AbstractAsynchronousOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractAsynchronousOperation.h; sourceTree = "<group>"; };
+		B27A9E4595007EFD8F871256 /* FakeOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeOperationQueue.m; sourceTree = "<group>"; };
 		B27A9E48B3FA3BA5C4254157 /* NSManagedObject+SpecHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+SpecHelpers.m"; sourceTree = "<group>"; };
 		B27A9F08862E0289B8B12544 /* AlbumPhotosViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumPhotosViewControllerSpec.m; sourceTree = "<group>"; };
 		B27A9F22210FD0D28F18806A /* ApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationController.h; sourceTree = "<group>"; };
@@ -350,6 +356,8 @@
 				B27A987F3F6E219E0BCB4574 /* NSManagedObject+SpecHelpers.h */,
 				B27A936D9CC79399A12620D2 /* FixtureResponses.m */,
 				B27A99E4BAF20B61501F8B06 /* FixtureResponses.h */,
+				B27A9E4595007EFD8F871256 /* FakeOperationQueue.m */,
+				B27A99E0954A58C8DF1DC36F /* FakeOperationQueue.h */,
 			);
 			path = "Test Helpers";
 			sourceTree = "<group>";
@@ -424,6 +432,8 @@
 			children = (
 				B27A90A2276A2C9E7281E5C0 /* AbstractAsynchronousOperation.m */,
 				B27A9E29729716BE081C9E0E /* AbstractAsynchronousOperation.h */,
+				B27A9A2B7853AE39D3544659 /* NSFileManager+ExampleApp.m */,
+				B27A9A5925277BB427A7A90D /* NSFileManager+ExampleApp.h */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -737,6 +747,7 @@
 				B27A91D03C7E83F31912716A /* PendingRequestContainer.m in Sources */,
 				B27A963956CA90A13749EA3C /* NetworkLayer+ExampleApp.m in Sources */,
 				B27A98D7EEAF54BA1AA4405F /* UsersNetworkLayerRequest.m in Sources */,
+				B27A9FBCFBE0C7F8065E98E3 /* NSFileManager+ExampleApp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,6 +773,7 @@
 				B27A9DBFD81238908E457160 /* NetworkLayerExampleAppSharedSpec.m in Sources */,
 				B27A9A7CEBDCB243FAF46AA3 /* UsersNetworkLayerRequestSpec.m in Sources */,
 				B27A95EA7621F0748265DE2A /* UserControllerSpec.m in Sources */,
+				B27A9AB62986CCACAB61BB2B /* FakeOperationQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
