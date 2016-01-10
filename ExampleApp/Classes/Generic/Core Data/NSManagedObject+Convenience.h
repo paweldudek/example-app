@@ -10,6 +10,10 @@
 
 + (NSArray *)allFromContext:(NSManagedObjectContext *)managedObjectContext sortedBy:(NSString *)key;
 
++ (NSArray *)allFromContext:(NSManagedObjectContext *)managedObjectContext sortedBy:(NSString *)key ascending:(BOOL)ascending;
+
++ (NSArray *)allFromContext:(NSManagedObjectContext *)managedObjectContext predicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors;
+
 #pragma mark - Creation
 
 + (instancetype)newFromContext:(NSManagedObjectContext *)managedObjectContext;

@@ -16,6 +16,11 @@
 
 @property(nonatomic, readonly) ApplicationController *applicationController;
 
+/*
+ * Will be loaded with view.
+ */
+@property(nonatomic, readonly) UISearchController *userSearchController;
+
 - (instancetype)initWithApplicationController:(ApplicationController *)applicationController;
 
 @end

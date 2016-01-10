@@ -15,6 +15,9 @@
 #import "Album.h"
 #import "ApplicationController.h"
 #import "UserController.h"
+#import "UserAlbumsProvider.h"
+#import "SearchUsersProvider.h"
+#import "PersistenceController.h"
 
 SpecBegin(RootFlowViewController)
 
@@ -23,11 +26,15 @@ describe(@"RootFlowViewController", ^{
     __block RootFlowViewController *sut;
 
     __block id mockUserController;
+    __block id mockPersistenceController;
 
     beforeEach(^{
         mockUserController = mock([UserController class]);
         id mockApplicationController = mock([ApplicationController class]);
+        mockPersistenceController = mock([PersistenceController class]);
+
         [given([mockApplicationController userController]) willReturn:mockUserController];
+        [given([mockApplicationController persistenceController]) willReturn:mockPersistenceController];
 
         sut = [[RootFlowViewController alloc] initWithApplicationController:mockApplicationController];
     });
@@ -62,6 +69,57 @@ describe(@"RootFlowViewController", ^{
 
             it(@"should have the first child view controller as its presenting navigation controller", ^{
                 expect(viewControllerPresenter.navigationController).to.equal(sut.childViewControllers.firstObject);
+            });
+        });
+
+        describe(@"search view controller", ^{
+
+            __block UISearchController *searchController;
+
+            action(^{
+                searchController = [sut userSearchController];
+            });
+
+            it(@"should be a search controller", ^{
+                expect(searchController).to.beKindOf([UISearchController class]);
+            });
+
+            describe(@"search results view controller", ^{
+
+                __block UsersViewController *searchResultsController;
+
+                action(^{
+                    searchResultsController = (UsersViewController *) [searchController searchResultsController];
+                });
+
+                it(@"should be a search users controller", ^{
+                    expect(searchResultsController).to.beKindOf([UsersViewController class]);
+                });
+
+                it(@"should have a delegate", ^{
+                    expect(searchResultsController.delegate).to.equal(sut);
+                });
+
+                describe(@"users provider", ^{
+
+                    __block SearchUsersProvider *usersProvider;
+
+                    action(^{
+                        usersProvider = (SearchUsersProvider *) [searchResultsController usersProvider];
+                    });
+
+                    it(@"should be a search users provider", ^{
+                        expect(usersProvider).to.beKindOf([SearchUsersProvider class]);
+                    });
+
+                    it(@"should have the persistence controller", ^{
+                        expect(usersProvider.persistenceController).to.equal(mockPersistenceController);
+                    });
+
+                    it(@"should be the search controller results updater", ^{
+                        expect(searchController.searchResultsUpdater).to.equal(usersProvider);
+                    });
+                });
             });
         });
 
@@ -166,6 +224,23 @@ describe(@"RootFlowViewController", ^{
 
             it(@"should have a delegate", ^{
                 expect(albumsViewController.delegate).to.equal(sut);
+            });
+
+            describe(@"albums provider", ^{
+
+                __block UserAlbumsProvider *albumsProvider;
+
+                action(^{
+                    albumsProvider = [albumsViewController albumsProvider];
+                });
+
+                it(@"should be a user albums provider", ^{
+                    expect(albumsProvider).to.beKindOf([UserAlbumsProvider class]);
+                });
+
+                it(@"should have the passed in user", ^{
+                    expect(albumsProvider.user).to.equal(user);
+                });
             });
         });
     });

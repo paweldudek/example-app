@@ -8,6 +8,10 @@
 #import "PersistenceController.h"
 
 
+@interface AllUsersProvider ()
+@property(nonatomic, strong) NSArray *allUsers;
+@end
+
 @implementation AllUsersProvider
 @synthesize delegate;
 
@@ -30,19 +34,21 @@
     [self.delegate contentProviderWillBeginUpdatingData:self];
 
     [self.userController updateUsersWithCompletion:^(NSError *error) {
-        NSArray *allUsers = [User allFromContext:self.userController.persistenceController.mainThreadManagedObjectContext];
-        NSLog(@"allUsers = %@", allUsers);
+        self.allUsers = [User allFromContext:self.userController.persistenceController.mainThreadManagedObjectContext];
+//        NSLog(@"allUsers = %@", allUsers);
+
+        [self.delegate contentProviderDidUpdateContent:self];
     }];
 }
 
 #pragma mark - Users Provider
 
-- (User *)userAtIndex:(NSUInteger)index {
-    return nil;
+- (User *)userAtIndex:(NSInteger)index {
+    return self.allUsers[(NSUInteger) index];
 }
 
 - (NSUInteger)numberOfUsers {
-    return 0;
+    return self.allUsers.count;
 }
 
 @end

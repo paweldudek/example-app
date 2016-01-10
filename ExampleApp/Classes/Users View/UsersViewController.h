@@ -12,7 +12,7 @@
 
 - (NSUInteger)numberOfUsers;
 
-- (User *)userAtIndex:(NSUInteger)index;
+- (User *)userAtIndex:(NSInteger)index;
 
 @end
 
@@ -28,6 +28,11 @@
 @property(nonatomic, weak) id <UsersViewControllerDelegate> delegate;
 
 @property(nonatomic, readonly) id <UsersProvider> usersProvider;
+
+/*
+ * Will be nil until view is loaded.
+ */
+@property(nonatomic, readonly) UITableView *tableView;
 
 - (instancetype)initWithUsersProvider:(id <UsersProvider>)usersProvider;
 

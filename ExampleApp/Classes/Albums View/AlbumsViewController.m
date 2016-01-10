@@ -6,4 +6,16 @@
 
 
 @implementation AlbumsViewController
+
+- (instancetype)initWithAlbumsProvider:(id <AlbumsProvider>)albumsProvider {
+    self = [super init];
+    if (self) {
+        _albumsProvider = albumsProvider;
+
+        self.title = self.albumsProvider.title;
+    }
+
+    return self;
+}
+
 @end

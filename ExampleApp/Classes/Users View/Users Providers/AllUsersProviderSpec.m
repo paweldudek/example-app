@@ -24,6 +24,10 @@ describe(@"AllUsersProvider", ^{
         expect(sut.title).to.equal(@"Users");
     });
 
+    it(@"should have a persistence controller", ^{
+        expect(NO).to.beTruthy();
+    });
+
     describe(@"update content", ^{
 
         __block id mockDelegate;

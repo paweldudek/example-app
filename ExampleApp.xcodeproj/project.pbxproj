@@ -11,9 +11,12 @@
 		430EF49F1C3FC9700024D130 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430EF49E1C3FC9700024D130 /* CoreData.framework */; };
 		430EF4A01C3FFCFB0024D130 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 430EF4A21C3FFCFB0024D130 /* Localizable.strings */; };
 		430EF4A51C3FFDE50024D130 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 430EF4A41C3FFDE50024D130 /* LaunchScreen.storyboard */; };
+		430EF4AA1C41BAD80024D130 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 430EF4A91C41BAD80024D130 /* UserTableViewCell.xib */; };
 		560D4221CDF9DA123FE618DF /* libPods-ExampleAppSpecs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F55EE05A69E79A8796398CE2 /* libPods-ExampleAppSpecs.a */; };
 		B27A902AF126787B26700E36 /* AppDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A99EA5590D5F4BC2C0944 /* AppDelegateSpec.m */; };
 		B27A90B5761BB9F3519711A4 /* ContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A99FC91806FDF233ED928 /* ContainerView.m */; };
+		B27A90C8E0AC3B720328F4B8 /* SearchUsersProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A942AA0A2C8E4FA054603 /* SearchUsersProvider.m */; };
+		B27A90D0A5A3739856A631DA /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9651A86E7E847B8F76F7 /* UserTableViewCell.m */; };
 		B27A90E4D5DD44E1343869A1 /* UsersViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9F8DCB445C6EC3D7D92F /* UsersViewControllerSpec.m */; };
 		B27A91D03C7E83F31912716A /* PendingRequestContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A97BE04D7C38EB69154CA /* PendingRequestContainer.m */; };
 		B27A922A14EAC8DEBA62301B /* AlbumPhotosViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9F08862E0289B8B12544 /* AlbumPhotosViewControllerSpec.m */; };
@@ -30,6 +33,7 @@
 		B27A963956CA90A13749EA3C /* NetworkLayer+ExampleApp.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9CBD12E917178C3BE30F /* NetworkLayer+ExampleApp.m */; };
 		B27A9705E47CEA550E33380A /* AllUsersProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A93C9A0D4C21CA3CF78E2 /* AllUsersProvider.m */; };
 		B27A9754E32593A7674ABA2D /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9F8E35003C7E07C71A93 /* Photo.m */; };
+		B27A9756A19F90F181B07BFF /* SearchUsersProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A99435989043B342C945D /* SearchUsersProviderSpec.m */; };
 		B27A97822F38D64CFC6BD130 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A94E7F117DF867BFA52BA /* AppDelegate.m */; };
 		B27A97C07540353ADA9F5E45 /* AllUsersProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9CD0121DCE5D3D0F5A00 /* AllUsersProviderSpec.m */; };
 		B27A97C6F2252655CB99FFB3 /* UpdateUsersOperationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A906D495960B702047110 /* UpdateUsersOperationSpec.m */; };
@@ -53,10 +57,12 @@
 		B27A9CC05058E0464C344886 /* ApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A98E3CA9A49900BC8CBEE /* ApplicationController.m */; };
 		B27A9CDA8FD37C4BBD65276F /* NetworkLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9796B8CB1333D51E941B /* NetworkLayer.m */; };
 		B27A9DBFD81238908E457160 /* NetworkLayerExampleAppSharedSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9BCE1D00A494FB848327 /* NetworkLayerExampleAppSharedSpec.m */; };
+		B27A9DE2D6A46082A3D688D4 /* UserAlbumsProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A92F2D09F054AE9703089 /* UserAlbumsProviderSpec.m */; };
 		B27A9DFAE56706A435ACACEF /* ExampleApp.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = B27A95FAD5709209CB215513 /* ExampleApp.xcdatamodel */; };
 		B27A9E3F24A90F8A24AB4FFD /* UpdateUsersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9B425777EA8635CCE128 /* UpdateUsersOperation.m */; };
 		B27A9E603E493E396631E473 /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9135C23123D4C3DEB70B /* UsersViewController.m */; };
 		B27A9E9B654792310F00318F /* ApplicationControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A96735425F802D9493879 /* ApplicationControllerSpec.m */; };
+		B27A9EA4A62C9BBE674DCC9F /* UserAlbumsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A940EED42BA5108B3B023 /* UserAlbumsProvider.m */; };
 		B27A9F28B13204801F59E79A /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9151D7AC478C63ADCF41 /* Company.m */; };
 		B27A9F61432D3614077DDC22 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9FADB592B90DA022FBFC /* LoadingView.m */; };
 		B27A9FBCFBE0C7F8065E98E3 /* NSFileManager+ExampleApp.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9A2B7853AE39D3544659 /* NSFileManager+ExampleApp.m */; };
@@ -86,8 +92,10 @@
 		430EF4A61C3FFDF40024D130 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		430EF4A71C3FFE070024D130 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		430EF4A81C3FFE0C0024D130 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		430EF4A91C41BAD80024D130 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		A3FF5BBD07DC7C7977CEFE25 /* Pods-ExampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleApp/Pods-ExampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		A71A72CAA9FB38963B87F341 /* Pods-ExampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleApp/Pods-ExampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		B27A9016478521C7B4C3FA26 /* UserAlbumsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAlbumsProvider.h; sourceTree = "<group>"; };
 		B27A906CD184EF15B87E3EB5 /* NetworkLayerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkLayerSpec.m; sourceTree = "<group>"; };
 		B27A906D495960B702047110 /* UpdateUsersOperationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateUsersOperationSpec.m; sourceTree = "<group>"; };
 		B27A90A2276A2C9E7281E5C0 /* AbstractAsynchronousOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractAsynchronousOperation.m; sourceTree = "<group>"; };
@@ -103,10 +111,13 @@
 		B27A92B864006E4B2A2C9B0F /* NavigationViewControllerPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewControllerPresenter.m; sourceTree = "<group>"; };
 		B27A92BE5BB6029C55B0C78A /* UsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersViewController.h; sourceTree = "<group>"; };
 		B27A92C68B1FD876A26906EF /* TestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAppDelegate.h; sourceTree = "<group>"; };
+		B27A92F2D09F054AE9703089 /* UserAlbumsProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAlbumsProviderSpec.m; sourceTree = "<group>"; };
 		B27A92FF649D58B50E60FB8F /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
 		B27A9369F5B613BE88BE9BF6 /* NetworkLayer+ExampleApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetworkLayer+ExampleApp.h"; sourceTree = "<group>"; };
 		B27A936D9CC79399A12620D2 /* FixtureResponses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FixtureResponses.m; sourceTree = "<group>"; };
 		B27A93C9A0D4C21CA3CF78E2 /* AllUsersProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllUsersProvider.m; sourceTree = "<group>"; };
+		B27A940EED42BA5108B3B023 /* UserAlbumsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAlbumsProvider.m; sourceTree = "<group>"; };
+		B27A942AA0A2C8E4FA054603 /* SearchUsersProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchUsersProvider.m; sourceTree = "<group>"; };
 		B27A947A80A496C2C35BBD6C /* NSManagedObject+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Convenience.h"; sourceTree = "<group>"; };
 		B27A94E7F117DF867BFA52BA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B27A9521FA7851D6FBC7B3B3 /* ContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentProvider.h; sourceTree = "<group>"; };
@@ -114,6 +125,7 @@
 		B27A958DDFAB869BFDBB437E /* UpdateUsersOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateUsersOperation.h; sourceTree = "<group>"; };
 		B27A95EFB24C7F7BACE89B30 /* UsersUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersUpdater.m; sourceTree = "<group>"; };
 		B27A95FAD5709209CB215513 /* ExampleApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExampleApp.xcdatamodel; sourceTree = "<group>"; };
+		B27A9651A86E7E847B8F76F7 /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewCell.m; sourceTree = "<group>"; };
 		B27A96735425F802D9493879 /* ApplicationControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationControllerSpec.m; sourceTree = "<group>"; };
 		B27A968039855D6BE29F8886 /* NetworkLayerExampleAppSharedSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkLayerExampleAppSharedSpec.h; sourceTree = "<group>"; };
 		B27A96C12E7CDCFD6CB1D4C4 /* NSManagedObject+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Convenience.m"; sourceTree = "<group>"; };
@@ -132,6 +144,7 @@
 		B27A98E66FD7D831E31566F1 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		B27A98E88234612A6B59C097 /* ViewControllerPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerPresenter.h; sourceTree = "<group>"; };
 		B27A9911BD67E7B49F70B425 /* UserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserController.m; sourceTree = "<group>"; };
+		B27A99435989043B342C945D /* SearchUsersProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchUsersProviderSpec.m; sourceTree = "<group>"; };
 		B27A994B57E963FCEA1A9472 /* AlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumsViewController.h; sourceTree = "<group>"; };
 		B27A997A962ABA0B78791CDA /* UsersNetworkLayerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersNetworkLayerRequest.h; sourceTree = "<group>"; };
 		B27A99A3B12CFA804A1391A6 /* RootFlowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootFlowViewController.m; sourceTree = "<group>"; };
@@ -149,8 +162,10 @@
 		B27A9B2B16DF9A12716684C9 /* AlbumsViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsViewControllerSpec.m; sourceTree = "<group>"; };
 		B27A9B425777EA8635CCE128 /* UpdateUsersOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateUsersOperation.m; sourceTree = "<group>"; };
 		B27A9B453FD7C88279B0E900 /* NSManagedObjectContext+SpecHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+SpecHelpers.h"; sourceTree = "<group>"; };
+		B27A9B4B329A8B3ED3D5AF69 /* SearchUsersProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchUsersProvider.h; sourceTree = "<group>"; };
 		B27A9B6859DE7E4C5D8EF850 /* AlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsViewController.m; sourceTree = "<group>"; };
 		B27A9B88F72603492F740C58 /* Users.JSON */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Users.JSON; sourceTree = "<group>"; };
+		B27A9B98E30F9B858029C133 /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewCell.h; sourceTree = "<group>"; };
 		B27A9BCE1D00A494FB848327 /* NetworkLayerExampleAppSharedSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkLayerExampleAppSharedSpec.m; sourceTree = "<group>"; };
 		B27A9BE24A87381885187EF7 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		B27A9C2FD2510128F8033F24 /* UsersNetworkLayerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersNetworkLayerRequest.m; sourceTree = "<group>"; };
@@ -261,6 +276,16 @@
 			path = ExampleAppSpecs;
 			sourceTree = "<group>";
 		};
+		B27A90B043B7EB46362B468A /* Albums Providers */ = {
+			isa = PBXGroup;
+			children = (
+				B27A940EED42BA5108B3B023 /* UserAlbumsProvider.m */,
+				B27A9016478521C7B4C3FA26 /* UserAlbumsProvider.h */,
+				B27A92F2D09F054AE9703089 /* UserAlbumsProviderSpec.m */,
+			);
+			path = "Albums Providers";
+			sourceTree = "<group>";
+		};
 		B27A924F598CA2E44C3970DD /* Generic */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,11 +327,21 @@
 			path = "Core Data";
 			sourceTree = "<group>";
 		};
+		B27A954F4AAB683A983F965D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				430EF4A91C41BAD80024D130 /* UserTableViewCell.xib */,
+				B27A9B98E30F9B858029C133 /* UserTableViewCell.h */,
+				B27A9651A86E7E847B8F76F7 /* UserTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B27A95F4B6FA0097C622B942 /* Persistence Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B27A9D095794E6086C09B7D3 /* PersistenceController.m */,
 				B27A9553638C60BDCA238025 /* PersistenceController.h */,
+				B27A9D095794E6086C09B7D3 /* PersistenceController.m */,
 				B27A91EC63504A5A1DF6AAFA /* PersistenceControllerSpec.m */,
 			);
 			path = "Persistence Controller";
@@ -325,15 +360,15 @@
 		B27A978A0E88B868DED14802 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B27A99AAEE3CCEF53C4A1801 /* Albums View */,
+				B27A924F598CA2E44C3970DD /* Generic */,
+				B27A9CF8D82F49A826E58695 /* Model */,
+				B27A95F4B6FA0097C622B942 /* Persistence Controller */,
+				B27A9DCFBEAA41E25C0E50EE /* Photos View */,
+				B27A99723F0265D347D6DE03 /* Root Flow View Controller */,
+				B27A9A5F55B2873EF970525E /* Users View */,
 				B27A97AF8877285590A672B8 /* AppDelegate.h */,
 				B27A94E7F117DF867BFA52BA /* AppDelegate.m */,
-				B27A99723F0265D347D6DE03 /* Root Flow View Controller */,
-				B27A95F4B6FA0097C622B942 /* Persistence Controller */,
-				B27A9CF8D82F49A826E58695 /* Model */,
-				B27A924F598CA2E44C3970DD /* Generic */,
-				B27A9A5F55B2873EF970525E /* Users View */,
-				B27A99AAEE3CCEF53C4A1801 /* Albums View */,
-				B27A9DCFBEAA41E25C0E50EE /* Photos View */,
 				B27A99EA5590D5F4BC2C0944 /* AppDelegateSpec.m */,
 			);
 			path = Classes;
@@ -378,9 +413,10 @@
 		B27A99AAEE3CCEF53C4A1801 /* Albums View */ = {
 			isa = PBXGroup;
 			children = (
-				B27A9B6859DE7E4C5D8EF850 /* AlbumsViewController.m */,
 				B27A994B57E963FCEA1A9472 /* AlbumsViewController.h */,
+				B27A9B6859DE7E4C5D8EF850 /* AlbumsViewController.m */,
 				B27A9B2B16DF9A12716684C9 /* AlbumsViewControllerSpec.m */,
+				B27A90B043B7EB46362B468A /* Albums Providers */,
 			);
 			path = "Albums View";
 			sourceTree = "<group>";
@@ -399,9 +435,10 @@
 		B27A9A5F55B2873EF970525E /* Users View */ = {
 			isa = PBXGroup;
 			children = (
-				B27A9135C23123D4C3DEB70B /* UsersViewController.m */,
-				B27A92BE5BB6029C55B0C78A /* UsersViewController.h */,
 				B27A9FEC5D8B7723C0AEC172 /* Users Providers */,
+				B27A954F4AAB683A983F965D /* View */,
+				B27A92BE5BB6029C55B0C78A /* UsersViewController.h */,
+				B27A9135C23123D4C3DEB70B /* UsersViewController.m */,
 				B27A9F8DCB445C6EC3D7D92F /* UsersViewControllerSpec.m */,
 			);
 			path = "Users View";
@@ -459,19 +496,19 @@
 		B27A9CF8D82F49A826E58695 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B27A98E66FD7D831E31566F1 /* User.m */,
-				B27A9BE24A87381885187EF7 /* User.h */,
-				B27A92FF649D58B50E60FB8F /* Album.m */,
-				B27A915FC393D39C90E3357E /* Album.h */,
-				B27A9A8DF792EC0A478E2023 /* User Controller */,
 				B27A9E21C51C2F2338DCAC9A /* Images Controller */,
-				B27A9F8E35003C7E07C71A93 /* Photo.m */,
-				B27A9A7727389743B5101A25 /* Photo.h */,
-				B27A98E3CA9A49900BC8CBEE /* ApplicationController.m */,
+				B27A9A8DF792EC0A478E2023 /* User Controller */,
+				B27A915FC393D39C90E3357E /* Album.h */,
+				B27A92FF649D58B50E60FB8F /* Album.m */,
 				B27A9F22210FD0D28F18806A /* ApplicationController.h */,
+				B27A98E3CA9A49900BC8CBEE /* ApplicationController.m */,
 				B27A96735425F802D9493879 /* ApplicationControllerSpec.m */,
-				B27A9151D7AC478C63ADCF41 /* Company.m */,
 				B27A9E445A17E92C325EDEFF /* Company.h */,
+				B27A9151D7AC478C63ADCF41 /* Company.m */,
+				B27A9A7727389743B5101A25 /* Photo.h */,
+				B27A9F8E35003C7E07C71A93 /* Photo.m */,
+				B27A9BE24A87381885187EF7 /* User.h */,
+				B27A98E66FD7D831E31566F1 /* User.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -506,9 +543,12 @@
 		B27A9FEC5D8B7723C0AEC172 /* Users Providers */ = {
 			isa = PBXGroup;
 			children = (
-				B27A93C9A0D4C21CA3CF78E2 /* AllUsersProvider.m */,
 				B27A9A7026ADE535297AA32B /* AllUsersProvider.h */,
+				B27A93C9A0D4C21CA3CF78E2 /* AllUsersProvider.m */,
 				B27A9CD0121DCE5D3D0F5A00 /* AllUsersProviderSpec.m */,
+				B27A942AA0A2C8E4FA054603 /* SearchUsersProvider.m */,
+				B27A9B4B329A8B3ED3D5AF69 /* SearchUsersProvider.h */,
+				B27A99435989043B342C945D /* SearchUsersProviderSpec.m */,
 			);
 			path = "Users Providers";
 			sourceTree = "<group>";
@@ -612,6 +652,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				430EF4AA1C41BAD80024D130 /* UserTableViewCell.xib in Resources */,
 				430EF4A51C3FFDE50024D130 /* LaunchScreen.storyboard in Resources */,
 				B27A92817B297039D96C8843 /* Assets.xcassets in Resources */,
 				430EF4A01C3FFCFB0024D130 /* Localizable.strings in Resources */,
@@ -754,6 +795,9 @@
 				B27A98D7EEAF54BA1AA4405F /* UsersNetworkLayerRequest.m in Sources */,
 				B27A9FBCFBE0C7F8065E98E3 /* NSFileManager+ExampleApp.m in Sources */,
 				B27A9F28B13204801F59E79A /* Company.m in Sources */,
+				B27A90D0A5A3739856A631DA /* UserTableViewCell.m in Sources */,
+				B27A9EA4A62C9BBE674DCC9F /* UserAlbumsProvider.m in Sources */,
+				B27A90C8E0AC3B720328F4B8 /* SearchUsersProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,6 +824,8 @@
 				B27A9A7CEBDCB243FAF46AA3 /* UsersNetworkLayerRequestSpec.m in Sources */,
 				B27A95EA7621F0748265DE2A /* UserControllerSpec.m in Sources */,
 				B27A9AB62986CCACAB61BB2B /* FakeOperationQueue.m in Sources */,
+				B27A9DE2D6A46082A3D688D4 /* UserAlbumsProviderSpec.m in Sources */,
+				B27A9756A19F90F181B07BFF /* SearchUsersProviderSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

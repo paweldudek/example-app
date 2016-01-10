@@ -3,3 +3,6 @@
 #import <OCMockito/OCMockito.h>
 #import <OCHamcrest/OCHamcrest.h>
 
+#import "NSManagedObjectContext+SpecHelpers.h"
+
+
