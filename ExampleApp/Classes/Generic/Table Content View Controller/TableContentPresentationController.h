@@ -10,7 +10,12 @@
 
 @property(nonatomic, readonly) CGFloat estimatedCellHeight;
 
-- (void)configureTableViewCell:(__kindof UITableViewCell *)tableViewCell withObject:(id)object;
+/*
+ * Will be set once TableContentViewController loads its view.
+ */
+@property(nonatomic, strong) UITableView *tableView;
+
+- (void)configureTableViewCell:(__kindof UITableViewCell *)tableViewCell atIndexPath:(NSIndexPath *)indexPath withObject:(id)object;
 
 - (void)selectObject:(id)object;
 

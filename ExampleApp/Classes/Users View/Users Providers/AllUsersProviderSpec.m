@@ -70,20 +70,6 @@ describe(@"AllUsersProvider", ^{
             });
         });
     });
-
-    describe(@"number of users", ^{
-
-        it(@"should be tested", ^{
-            expect(NO).to.beTruthy();
-        });
-    });
-
-    describe(@"user at index", ^{
-
-        it(@"should be tested", ^{
-            expect(NO).to.beTruthy();
-        });
-    });
 });
 
 SpecEnd

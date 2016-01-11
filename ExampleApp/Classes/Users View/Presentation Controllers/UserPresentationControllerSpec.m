@@ -56,7 +56,7 @@ describe(@"UserPresentationController", ^{
         });
 
         action(^{
-            [sut configureTableViewCell:tableViewCell withObject:user];
+            [sut configureTableViewCell:tableViewCell atIndexPath:nil withObject:user];
         });
 
         it(@"should have title with user name", ^{

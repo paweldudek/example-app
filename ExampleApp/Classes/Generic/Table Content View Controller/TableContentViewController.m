@@ -57,6 +57,7 @@
     [tableView registerNib:self.tableContentPresentationController.tableViewCellNib forCellReuseIdentifier:@"Cell"];
 
     self.tableView = tableView;
+    self.tableContentPresentationController.tableView = tableView;
 }
 
 - (void)viewDidLoad {
@@ -112,7 +113,7 @@
     UserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
     id object = [self.contentProvider objectAtIndex:indexPath.row];
-    [self.tableContentPresentationController configureTableViewCell:cell withObject:object];
+    [self.tableContentPresentationController configureTableViewCell:cell atIndexPath:indexPath withObject:object];
 
     return cell;
 }

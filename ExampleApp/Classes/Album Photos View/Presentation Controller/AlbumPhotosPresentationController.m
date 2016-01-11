@@ -9,6 +9,7 @@
 
 
 @implementation AlbumPhotosPresentationController
+@synthesize tableView = _tableView;
 
 - (instancetype)init {
     self = [super init];
@@ -29,12 +30,16 @@
     return 44;
 }
 
-- (void)configureTableViewCell:(__kindof UITableViewCell *)tableViewCell withObject:(AlbumPhoto *)albumPhoto {
+- (void)configureTableViewCell:(__kindof UITableViewCell *)tableViewCell atIndexPath:(NSIndexPath *)indexPath withObject:(id)object {
+    NSAssert([object isKindOfClass:[AlbumPhoto class]], @"%@ works only with album photos objects.", [self class]);
+    AlbumPhoto *albumPhoto = object;
+
     tableViewCell.textLabel.text = albumPhoto.title;
 
     [self.imageController retrieveImageForEntity:albumPhoto withFormatName:EXATableViewCellImageFormatName
                                  completionBlock:^(id <FICEntity> entity, NSString *formatName, UIImage *image) {
-                                     tableViewCell.imageView.image = image;
+                                     UITableViewCell *viewCell = [self.tableView cellForRowAtIndexPath:indexPath];
+                                     viewCell.imageView.image = image;
                                  }];
 }
 

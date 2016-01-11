@@ -53,7 +53,7 @@ describe(@"AlbumPhotosPresentationController", ^{
         });
 
         action(^{
-            [sut configureTableViewCell:tableViewCell withObject:albumPhoto];
+            [sut configureTableViewCell:tableViewCell atIndexPath:nil withObject:albumPhoto];
         });
 
         it(@"should have title with user name", ^{

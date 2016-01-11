@@ -54,6 +54,10 @@ describe(@"TableContentViewController", ^{
             [verify(mockContentProvider) updateContent];
         });
 
+        it(@"should give the table view to presentation controller", ^{
+            [verify(mockPresentationController) setTableView:sut.tableView];
+        });
+
         describe(@"overlay view", ^{
 
             __block UIView *overlayView;
@@ -143,7 +147,9 @@ describe(@"TableContentViewController", ^{
             });
 
             it(@"should tell its presentation controller to configure that cell", ^{
-                [verify(mockPresentationController) configureTableViewCell:tableViewCell withObject:user];
+                [verify(mockPresentationController) configureTableViewCell:tableViewCell
+                                                               atIndexPath:indexPath
+                                                                withObject:user];
             });
         });
         

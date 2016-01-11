@@ -6,6 +6,7 @@
 
 
 @implementation AlbumPresentationController
+@synthesize tableView = _tableView;
 
 - (UINib *)tableViewCellNib {
     return [UINib nibWithNibName:@"AlbumTableViewCell" bundle:nil];
@@ -15,7 +16,10 @@
     return 44;
 }
 
-- (void)configureTableViewCell:(UITableViewCell *)tableViewCell withObject:(Album *)album {
+- (void)configureTableViewCell:(__kindof UITableViewCell *)tableViewCell atIndexPath:(NSIndexPath *)indexPath withObject:(id)object {
+    NSAssert([object isKindOfClass:[Album class]], @"%@ works only with album objects.", [self class]);
+    Album *album = object;
+
     tableViewCell.textLabel.text = album.title;
 }
 

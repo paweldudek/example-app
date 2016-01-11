@@ -51,7 +51,7 @@ describe(@"AlbumPresentationController", ^{
         });
 
         action(^{
-            [sut configureTableViewCell:tableViewCell withObject:album];
+            [sut configureTableViewCell:tableViewCell atIndexPath:nil withObject:album];
         });
 
         it(@"should have text label with album title", ^{
