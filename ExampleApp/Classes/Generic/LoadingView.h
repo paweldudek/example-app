@@ -6,6 +6,4 @@
 
 @interface LoadingView : UIView
 
-@property(nonatomic, readonly) UIActivityIndicatorView *activityIndicatorView;
-
 @end

@@ -7,6 +7,7 @@
 #import "ContainerView.h"
 #import "UserTableViewCell.h"
 #import "Company.h"
+#import "LoadingView.h"
 
 
 @interface UsersViewController ()
@@ -38,6 +39,9 @@
 
     ContainerView *containerView = [[ContainerView alloc] init];
     containerView.containedView = viewController.view;
+    LoadingView *loadingView = [[LoadingView alloc] init];
+    loadingView.alpha = 0.0f;
+    containerView.overlayView = loadingView;
 
     self.view = containerView;
 
@@ -59,14 +63,28 @@
     [self.usersProvider updateContent];
 }
 
+#pragma mark - Dynamic View Getter
+
+- (ContainerView *)containerView {
+    ContainerView *containerView = nil;
+    if ([self isViewLoaded]) {
+        containerView = (ContainerView *) [self view];
+    }
+    return containerView;
+}
+
 #pragma mark - Content Provider Delegate
 
 - (void)contentProviderWillBeginUpdatingData:(id <ContentProvider>)contentProvider {
-    //TODO: display loading indicator
+    [UIView animateWithDuration:0.3f animations:^{
+        self.containerView.overlayView.alpha = 1.0f;
+    }];
 }
 
 - (void)contentProviderDidFinishUpdatingData:(id <ContentProvider>)contentProvider {
-    //TODO: hide loading indicator
+    [UIView animateWithDuration:0.3f animations:^{
+        self.containerView.overlayView.alpha = 0.0f;
+    }];
 }
 
 - (void)contentProviderDidUpdateContent:(id <ContentProvider>)contentProvider {

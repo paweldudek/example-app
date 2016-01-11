@@ -37,6 +37,7 @@
 
     [self.userController updateUsersWithCompletion:^(NSError *error) {
         self.allUsers = [User allFromContext:self.persistenceController.mainThreadManagedObjectContext];
+        [self.delegate contentProviderDidFinishUpdatingData:self];
         [self.delegate contentProviderDidUpdateContent:self];
     }];
 }

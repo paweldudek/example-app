@@ -7,6 +7,7 @@
 #import "ContainerView.h"
 #import "UserTableViewCell.h"
 #import "Company.h"
+#import "LoadingView.h"
 
 SpecBegin(UsersViewController)
 
@@ -47,6 +48,23 @@ describe(@"UsersViewController", ^{
 
         it(@"should tell its users provider to update content", ^{
             [verify(mockUsersProvider) updateContent];
+        });
+
+        describe(@"overlay view", ^{
+
+            __block UIView *overlayView;
+
+            action(^{
+                overlayView = [view overlayView];
+            });
+
+            it(@"should be a loading view", ^{
+                expect(overlayView).to.beKindOf([LoadingView class]);
+            });
+
+            it(@"should have no alpha", ^{
+                expect(overlayView.alpha).to.equal(0.0f);
+            });
         });
 
         describe(@"child view controllers", ^{

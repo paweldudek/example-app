@@ -52,12 +52,36 @@ describe(@"AllUsersProvider", ^{
         describe(@"when updating finishes", ^{
 
             action(^{
+                HCArgumentCaptor *captor = [HCArgumentCaptor new];
+                [verify(mockUserController) updateUsersWithCompletion:(id) captor];
 
+                void (^completion)() = [captor value];
+                if (completion) {
+                    completion();
+                }
+            });
+
+            it(@"should inform its delegate that it updated content", ^{
+                [verify(mockDelegate) contentProviderDidUpdateContent:sut];
             });
 
             it(@"should tell its delegate that it finished loading data", ^{
                 [verify(mockDelegate) contentProviderDidFinishUpdatingData:sut];
             });
+        });
+    });
+
+    describe(@"number of users", ^{
+
+        it(@"should be tested", ^{
+            expect(NO).to.beTruthy();
+        });
+    });
+
+    describe(@"user at index", ^{
+
+        it(@"should be tested", ^{
+            expect(NO).to.beTruthy();
         });
     });
 });
