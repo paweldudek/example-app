@@ -13,14 +13,14 @@
 - (void)updateContentWithArray:(NSArray *)contentArray managedObjectContext:(NSManagedObjectContext *)managedObjectContext {
     NSMutableArray <Album *> *deleteCandidates = [[Album allFromContext:managedObjectContext] mutableCopy];
 
-    for (NSDictionary *userDictionary in contentArray) {
-        Album *album = [Album findFirstByIdentifier:userDictionary[@"id"]
-                                     fromContext:managedObjectContext];
+    for (NSDictionary *albumDictionary in contentArray) {
+        Album *album = [Album findFirstByIdentifier:albumDictionary[@"id"]
+                                        fromContext:managedObjectContext];
         if (album == nil) {
             album = [Album newFromContext:managedObjectContext];
         }
 
-        [KZPropertyMapper mapValuesFrom:userDictionary
+        [KZPropertyMapper mapValuesFrom:albumDictionary
                              toInstance:album
                            usingMapping:@{
                                    @"title" : KZPropertyT(album, title),

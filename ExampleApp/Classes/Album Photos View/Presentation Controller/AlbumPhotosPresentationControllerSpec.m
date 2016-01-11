@@ -53,11 +53,11 @@ describe(@"AlbumPhotosPresentationController", ^{
         });
 
         action(^{
-            [sut configureTableViewCell:tableViewCell withObject:user];
+            [sut configureTableViewCell:tableViewCell withObject:albumPhoto];
         });
 
         it(@"should have title with user name", ^{
-            expect(tableViewCell.textLabel.text).to.equal(@"Fixture Name");
+            expect(tableViewCell.textLabel.text).to.equal(@"Fixture Title");
         });
     });
 });

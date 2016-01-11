@@ -10,16 +10,21 @@
 @implementation AlbumsPhotosUpdater
 
 - (void)updateContentWithArray:(NSArray *)contentArray managedObjectContext:(NSManagedObjectContext *)managedObjectContext {
-    NSMutableArray <AlbumPhoto *> *deleteCandidates = [[AlbumPhoto allFromContext:managedObjectContext] mutableCopy];
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([AlbumPhoto class])];
+    fetchRequest.returnsObjectsAsFaults = NO;
 
-    for (NSDictionary *userDictionary in contentArray) {
-        AlbumPhoto *albumPhoto = [AlbumPhoto findFirstByIdentifier:userDictionary[@"id"]
-                                                       fromContext:managedObjectContext];
+    NSMutableArray <AlbumPhoto *> *deleteCandidates = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+
+    for (NSDictionary *albumPhotoDictionary in contentArray) {
+        NSNumber *albumIdentifier = albumPhotoDictionary[@"id"];
+        NSPredicate *albumPredicate = [NSPredicate predicateWithFormat:@"identifier == %@", albumIdentifier];
+        AlbumPhoto *albumPhoto = [deleteCandidates filteredArrayUsingPredicate:albumPredicate].firstObject;
+
         if (albumPhoto == nil) {
             albumPhoto = [AlbumPhoto newFromContext:managedObjectContext];
         }
 
-        [KZPropertyMapper mapValuesFrom:userDictionary
+        [KZPropertyMapper mapValuesFrom:albumPhotoDictionary
                              toInstance:albumPhoto
                            usingMapping:@{
                                    @"title" : KZPropertyT(albumPhoto, title),

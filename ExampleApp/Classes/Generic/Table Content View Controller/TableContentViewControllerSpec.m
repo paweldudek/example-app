@@ -8,6 +8,7 @@
 #import "UserTableViewCell.h"
 #import "Company.h"
 #import "LoadingView.h"
+#import "TableContentPresentationController.h"
 
 SpecBegin(TableContentViewController)
 
