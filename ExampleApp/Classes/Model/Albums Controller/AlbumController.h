@@ -15,4 +15,6 @@
 
 - (void)updateAlbumsWithCompletion:(void (^)(NSError *))completion;
 
+- (void)updateAlbumsPhotosWithCompletion:(void (^)(NSError *))completion;
+
 @end

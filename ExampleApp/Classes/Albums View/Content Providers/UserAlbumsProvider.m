@@ -20,7 +20,7 @@
     self = [super init];
     if (self) {
         _user = user;
-        _albumsController = albumsController;
+        _albumController = albumsController;
         _persistenceController = persistenceController;
     }
 
@@ -37,7 +37,7 @@
     [self.delegate contentProviderWillBeginUpdatingData:self];
     [self reloadAlbums];
 
-    [self.albumsController updateAlbumsWithCompletion:^(NSError *error) {
+    [self.albumController updateAlbumsWithCompletion:^(NSError *error) {
         [self reloadAlbums];
         [self.delegate contentProviderDidFinishUpdatingData:self];
         [self.delegate contentProviderDidUpdateContent:self];

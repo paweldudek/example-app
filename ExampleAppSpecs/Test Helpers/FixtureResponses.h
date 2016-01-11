@@ -10,4 +10,6 @@
 
 + (NSArray *)fixtureAlbumsResponse;
 
++ (NSArray *)fixtureAlbumsPhotosResponse;
+
 @end

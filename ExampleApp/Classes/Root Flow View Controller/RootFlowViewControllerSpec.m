@@ -7,7 +7,6 @@
 #import "NavigationViewControllerPresenter.h"
 #import "NSManagedObject+SpecHelpers.h"
 #import "User.h"
-#import "AlbumPhotosViewController.h"
 #import "Album.h"
 #import "ApplicationController.h"
 #import "UserController.h"
@@ -15,7 +14,7 @@
 #import "SearchUsersProvider.h"
 #import "PersistenceController.h"
 #import "AlbumController.h"
-#import "AlbumPresentationController.h"
+#import "AlbumPhotosProvider.h"
 
 SpecBegin(RootFlowViewController)
 
@@ -291,7 +290,7 @@ describe(@"RootFlowViewController", ^{
                 });
 
                 it(@"should have album controller", ^{
-                    expect(contentProvider.albumsController).to.equal(mockAlbumController);
+                    expect(contentProvider.albumController).to.equal(mockAlbumController);
                 });
             });
         });
@@ -314,21 +313,62 @@ describe(@"RootFlowViewController", ^{
         action(^{
             [sut albumPresentationController:nil didSelectAlbum:album];
         });
-
         describe(@"last presented view controller", ^{
 
-            __block AlbumPhotosViewController *albumPhotosViewController;
+            __block TableContentViewController *albumsViewController;
 
             action(^{
                 HCArgumentCaptor *argumentCaptor = [HCArgumentCaptor new];
                 [verify(mockViewControllerPresenter) pushViewController:(id) argumentCaptor
                                                                animated:YES
                                                              completion:nil];
-                albumPhotosViewController = [argumentCaptor value];
+                albumsViewController = [argumentCaptor value];
             });
 
-            it(@"should be an albums view controller", ^{
-                expect(albumPhotosViewController).to.beKindOf([AlbumPhotosViewController class]);
+            it(@"should be an table content view controller", ^{
+                expect(albumsViewController).to.beKindOf([TableContentViewController class]);
+            });
+
+            describe(@"presentation controller", ^{
+
+                __block AlbumPresentationController *tableContentPresentationController;
+
+                action(^{
+                    tableContentPresentationController = (id) [albumsViewController tableContentPresentationController];
+                });
+
+                it(@"should be user presentation controller", ^{
+                    expect(tableContentPresentationController).to.beKindOf([AlbumPresentationController class]);
+                });
+
+                it(@"should have a delegate", ^{
+                    expect(tableContentPresentationController.delegate).to.equal(sut);
+                });
+            });
+
+            describe(@"albums provider", ^{
+
+                __block AlbumPhotosProvider *contentProvider;
+
+                action(^{
+                    contentProvider = [albumsViewController contentProvider];
+                });
+
+                it(@"should be a user albums provider", ^{
+                    expect(contentProvider).to.beKindOf([AlbumPhotosProvider class]);
+                });
+
+                it(@"should have the passed in user", ^{
+                    expect(contentProvider.album).to.equal(album);
+                });
+
+                it(@"should have a persistence controller", ^{
+                    expect(contentProvider.persistenceController).to.equal(mockPersistenceController);
+                });
+
+                it(@"should have album controller", ^{
+                    expect(contentProvider.albumController).to.equal(mockAlbumController);
+                });
             });
         });
     });

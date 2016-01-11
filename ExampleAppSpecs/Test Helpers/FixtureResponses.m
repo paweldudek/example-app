@@ -18,7 +18,14 @@
                                              error:nil];
 }
 
++ (NSArray *)fixtureAlbumsPhotosResponse {
+    return [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:[self pathForJSONResourceWithName:@"AlbumsPhotos"]]
+                                           options:0
+                                             error:nil];
+}
+
 + (NSString *)pathForJSONResourceWithName:(NSString *)name {
     return [[NSBundle bundleForClass:self] pathForResource:name ofType:@"JSON"];
 }
+
 @end

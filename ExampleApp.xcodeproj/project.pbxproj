@@ -23,18 +23,19 @@
 		B27A90D0A5A3739856A631DA /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9651A86E7E847B8F76F7 /* UserTableViewCell.m */; };
 		B27A91D03C7E83F31912716A /* PendingRequestContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A97BE04D7C38EB69154CA /* PendingRequestContainer.m */; };
 		B27A91E41E567D6C12986A43 /* ImageControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9EAF8FD8F98F67D1B199 /* ImageControllerSpec.m */; };
-		B27A922A14EAC8DEBA62301B /* AlbumPhotosViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9F08862E0289B8B12544 /* AlbumPhotosViewControllerSpec.m */; };
 		B27A92817B297039D96C8843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27A9D04C65B7AA775F20667 /* Assets.xcassets */; };
 		B27A928EE96A7676BE9D718A /* NavigationViewControllerPresenterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A983623674955F29E3F1E /* NavigationViewControllerPresenterSpec.m */; };
-		B27A93010C99CEA3C0846007 /* AlbumPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9AED0F9F3057894028F4 /* AlbumPhotosViewController.m */; };
+		B27A93056BEC4C8A10068FF9 /* AlbumsPhotosNetworkLayerRequestSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9C1FAC76A35EF722FD61 /* AlbumsPhotosNetworkLayerRequestSpec.m */; };
 		B27A934F0A203AA07BFAC326 /* UserPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A977E2C5975AB6695B59B /* UserPresentationController.m */; };
 		B27A93569A3110972B5699DE /* NSManagedObject+SpecHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9E48B3FA3BA5C4254157 /* NSManagedObject+SpecHelpers.m */; };
+		B27A9361B7F857D1ACD96748 /* AlbumsPhotosUpdaterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A965C7143E0BFE58AC0CC /* AlbumsPhotosUpdaterSpec.m */; };
 		B27A939BA9B2DAE4423788A8 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A92FF649D58B50E60FB8F /* Album.m */; };
 		B27A942DE642A93EB55A7431 /* AlbumsUpdaterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A990BB1461C3F5B996F03 /* AlbumsUpdaterSpec.m */; };
 		B27A945B2A42C40FA6B2DF78 /* UsersUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A95EFB24C7F7BACE89B30 /* UsersUpdater.m */; };
 		B27A9470136DEDAC63C43806 /* PersistenceControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A91EC63504A5A1DF6AAFA /* PersistenceControllerSpec.m */; };
 		B27A94CAD314F7300B9A7EDC /* NSManagedObject+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A96C12E7CDCFD6CB1D4C4 /* NSManagedObject+Convenience.m */; };
 		B27A954B445CCB85B0CF512A /* UserPresentationControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9D0FDEF9865E4EE80EDC /* UserPresentationControllerSpec.m */; };
+		B27A958FEF893D4428C593E5 /* AlbumPhotosProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A958E37704BA2D7040577 /* AlbumPhotosProvider.m */; };
 		B27A95EA7621F0748265DE2A /* UserControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A988D6ED64A8EBA313B76 /* UserControllerSpec.m */; };
 		B27A95FEFBE273348A1551FB /* NetworkLayerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A906CD184EF15B87E3EB5 /* NetworkLayerSpec.m */; };
 		B27A963956CA90A13749EA3C /* NetworkLayer+ExampleApp.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9CBD12E917178C3BE30F /* NetworkLayer+ExampleApp.m */; };
@@ -49,6 +50,7 @@
 		B27A97EF64F4A657F8354EF7 /* NavigationViewControllerPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A92B864006E4B2A2C9B0F /* NavigationViewControllerPresenter.m */; };
 		B27A9839607802D0D6A31F24 /* Users.JSON in Resources */ = {isa = PBXBuildFile; fileRef = B27A9B88F72603492F740C58 /* Users.JSON */; };
 		B27A98443AFE5C67AD7CE9D1 /* NSManagedObjectContext+SpecHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A924654AA680C07BA067E /* NSManagedObjectContext+SpecHelpers.m */; };
+		B27A9871BE5C42CBD7DE5F04 /* AlbumPhotosProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A922E983F32E3DB078C47 /* AlbumPhotosProviderSpec.m */; };
 		B27A98C02A72C6A3FEAE5B78 /* AlbumController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9093DD0A6FD85B014C26 /* AlbumController.m */; };
 		B27A994F22BB1528FD994181 /* PersistenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9D095794E6086C09B7D3 /* PersistenceController.m */; };
 		B27A996B08243889AB19BA1D /* AbstractAsynchronousOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A90A2276A2C9E7281E5C0 /* AbstractAsynchronousOperation.m */; };
@@ -58,16 +60,19 @@
 		B27A9A8213A1452441DA58DF /* UserController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9911BD67E7B49F70B425 /* UserController.m */; };
 		B27A9AB62986CCACAB61BB2B /* FakeOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9E4595007EFD8F871256 /* FakeOperationQueue.m */; };
 		B27A9AD93CF4C48A5AB30B02 /* FixtureResponses.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A936D9CC79399A12620D2 /* FixtureResponses.m */; };
+		B27A9B06A67475ECACA4152F /* AlbumsPhotos.JSON in Resources */ = {isa = PBXBuildFile; fileRef = B27A95A53762736ED393D191 /* AlbumsPhotos.JSON */; };
 		B27A9B5ACBB3DDE82AC7E7BA /* UsersUpdaterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A96D63D04385AD1FCA662 /* UsersUpdaterSpec.m */; };
 		B27A9B6AA63A0ED6AA38BCA8 /* TableContentViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9A984C01A44868C9FDEB /* TableContentViewControllerSpec.m */; };
 		B27A9B757EC792FFEE03EAF1 /* TestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A975B0EAF589DFD8E4978 /* TestAppDelegate.m */; };
 		B27A9BFDCA3E837C757AE9BD /* GenericUpdateContentOperationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A936EB0D0CE502E268443 /* GenericUpdateContentOperationSpec.m */; };
+		B27A9C11AD1C7C72F5A2A5E4 /* AlbumsPhotosUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9C452A466002C8757F50 /* AlbumsPhotosUpdater.m */; };
 		B27A9C180B01F951DA50E7EB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A98E66FD7D831E31566F1 /* User.m */; };
 		B27A9C1A141B2EAAD31FFCD6 /* TableContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9B7FC33CCE960C9CD1B5 /* TableContentViewController.m */; };
 		B27A9C1F1426CEAD23A56014 /* ImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9CD0AAF950DCF5ECF490 /* ImageController.m */; };
 		B27A9CC05058E0464C344886 /* ApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A98E3CA9A49900BC8CBEE /* ApplicationController.m */; };
 		B27A9CDA8FD37C4BBD65276F /* NetworkLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9796B8CB1333D51E941B /* NetworkLayer.m */; };
 		B27A9D1C4366BC8AFAA5C059 /* AlbumsNetworkLayerRequestSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A91A09F217D4893E32AD9 /* AlbumsNetworkLayerRequestSpec.m */; };
+		B27A9D95E85A2E61F44205CB /* AlbumsPhotosNetworkLayerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9BDF7FD8BEA331C4DC59 /* AlbumsPhotosNetworkLayerRequest.m */; };
 		B27A9DBFD81238908E457160 /* NetworkLayerExampleAppSharedSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9BCE1D00A494FB848327 /* NetworkLayerExampleAppSharedSpec.m */; };
 		B27A9DE2D6A46082A3D688D4 /* UserAlbumsProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A92F2D09F054AE9703089 /* UserAlbumsProviderSpec.m */; };
 		B27A9DFAE56706A435ACACEF /* ExampleApp.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = B27A95FAD5709209CB215513 /* ExampleApp.xcdatamodel */; };
@@ -124,6 +129,7 @@
 		B27A918C28F157F4D8D5BD43 /* UserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserController.h; sourceTree = "<group>"; };
 		B27A91A09F217D4893E32AD9 /* AlbumsNetworkLayerRequestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsNetworkLayerRequestSpec.m; sourceTree = "<group>"; };
 		B27A91EC63504A5A1DF6AAFA /* PersistenceControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistenceControllerSpec.m; sourceTree = "<group>"; };
+		B27A922E983F32E3DB078C47 /* AlbumPhotosProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumPhotosProviderSpec.m; sourceTree = "<group>"; };
 		B27A922EE0F5D222E4A36F85 /* UsersUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersUpdater.h; sourceTree = "<group>"; };
 		B27A924654AA680C07BA067E /* NSManagedObjectContext+SpecHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+SpecHelpers.m"; sourceTree = "<group>"; };
 		B27A92B864006E4B2A2C9B0F /* NavigationViewControllerPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewControllerPresenter.m; sourceTree = "<group>"; };
@@ -146,17 +152,21 @@
 		B27A94E7F117DF867BFA52BA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B27A9521FA7851D6FBC7B3B3 /* ContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentProvider.h; sourceTree = "<group>"; };
 		B27A9553638C60BDCA238025 /* PersistenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistenceController.h; sourceTree = "<group>"; };
+		B27A958E37704BA2D7040577 /* AlbumPhotosProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumPhotosProvider.m; sourceTree = "<group>"; };
+		B27A95A53762736ED393D191 /* AlbumsPhotos.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AlbumsPhotos.JSON; sourceTree = "<group>"; };
 		B27A95EFB24C7F7BACE89B30 /* UsersUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersUpdater.m; sourceTree = "<group>"; };
 		B27A95FAD5709209CB215513 /* ExampleApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExampleApp.xcdatamodel; sourceTree = "<group>"; };
 		B27A95FDB84EF6B7006ACE05 /* Albums.JSON */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Albums.JSON; sourceTree = "<group>"; };
 		B27A9651A86E7E847B8F76F7 /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewCell.m; sourceTree = "<group>"; };
 		B27A9654B77990DAC34E2D66 /* AlbumsNetworkLayerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumsNetworkLayerRequest.h; sourceTree = "<group>"; };
+		B27A965C7143E0BFE58AC0CC /* AlbumsPhotosUpdaterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsPhotosUpdaterSpec.m; sourceTree = "<group>"; };
 		B27A96735425F802D9493879 /* ApplicationControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationControllerSpec.m; sourceTree = "<group>"; };
 		B27A96737A42CA58848861AB /* ImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageController.h; sourceTree = "<group>"; };
 		B27A968039855D6BE29F8886 /* NetworkLayerExampleAppSharedSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkLayerExampleAppSharedSpec.h; sourceTree = "<group>"; };
 		B27A96C12E7CDCFD6CB1D4C4 /* NSManagedObject+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Convenience.m"; sourceTree = "<group>"; };
 		B27A96D63D04385AD1FCA662 /* UsersUpdaterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersUpdaterSpec.m; sourceTree = "<group>"; };
 		B27A96DCCCA326E0E824F98C /* PendingRequestContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PendingRequestContainer.h; sourceTree = "<group>"; };
+		B27A9749CF61905261B13970 /* AlbumPhotosProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumPhotosProvider.h; sourceTree = "<group>"; };
 		B27A975B0EAF589DFD8E4978 /* TestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAppDelegate.m; sourceTree = "<group>"; };
 		B27A977E2C5975AB6695B59B /* UserPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPresentationController.m; sourceTree = "<group>"; };
 		B27A9796B8CB1333D51E941B /* NetworkLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkLayer.m; sourceTree = "<group>"; };
@@ -165,6 +175,7 @@
 		B27A983623674955F29E3F1E /* NavigationViewControllerPresenterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewControllerPresenterSpec.m; sourceTree = "<group>"; };
 		B27A987F3F6E219E0BCB4574 /* NSManagedObject+SpecHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+SpecHelpers.h"; sourceTree = "<group>"; };
 		B27A988D6ED64A8EBA313B76 /* UserControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserControllerSpec.m; sourceTree = "<group>"; };
+		B27A98A4351EC8BB55F9DB7A /* AlbumsPhotosNetworkLayerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumsPhotosNetworkLayerRequest.h; sourceTree = "<group>"; };
 		B27A98B2821B1E694284C275 /* ContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerView.h; sourceTree = "<group>"; };
 		B27A98E3CA9A49900BC8CBEE /* ApplicationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationController.m; sourceTree = "<group>"; };
 		B27A98E66FD7D831E31566F1 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
@@ -186,17 +197,20 @@
 		B27A9A7026ADE535297AA32B /* AllUsersProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllUsersProvider.h; sourceTree = "<group>"; };
 		B27A9A7727389743B5101A25 /* AlbumPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumPhoto.h; sourceTree = "<group>"; };
 		B27A9A984C01A44868C9FDEB /* TableContentViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableContentViewControllerSpec.m; sourceTree = "<group>"; };
+		B27A9AA32BCE2FFC2C9B021E /* AlbumsPhotosUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumsPhotosUpdater.h; sourceTree = "<group>"; };
 		B27A9ACE86D2E16B1769465F /* NavigationViewControllerPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewControllerPresenter.h; sourceTree = "<group>"; };
 		B27A9AD8D684F3BDEFA1EA4F /* TableContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableContentViewController.h; sourceTree = "<group>"; };
 		B27A9AE3BC57939DFA8BF490 /* AlbumController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumController.h; sourceTree = "<group>"; };
-		B27A9AED0F9F3057894028F4 /* AlbumPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumPhotosViewController.m; sourceTree = "<group>"; };
 		B27A9B453FD7C88279B0E900 /* NSManagedObjectContext+SpecHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+SpecHelpers.h"; sourceTree = "<group>"; };
 		B27A9B4B329A8B3ED3D5AF69 /* SearchUsersProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchUsersProvider.h; sourceTree = "<group>"; };
 		B27A9B7FC33CCE960C9CD1B5 /* TableContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableContentViewController.m; sourceTree = "<group>"; };
 		B27A9B88F72603492F740C58 /* Users.JSON */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Users.JSON; sourceTree = "<group>"; };
 		B27A9B98E30F9B858029C133 /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewCell.h; sourceTree = "<group>"; };
 		B27A9BCE1D00A494FB848327 /* NetworkLayerExampleAppSharedSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkLayerExampleAppSharedSpec.m; sourceTree = "<group>"; };
+		B27A9BDF7FD8BEA331C4DC59 /* AlbumsPhotosNetworkLayerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsPhotosNetworkLayerRequest.m; sourceTree = "<group>"; };
 		B27A9BE24A87381885187EF7 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		B27A9C1FAC76A35EF722FD61 /* AlbumsPhotosNetworkLayerRequestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsPhotosNetworkLayerRequestSpec.m; sourceTree = "<group>"; };
+		B27A9C452A466002C8757F50 /* AlbumsPhotosUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsPhotosUpdater.m; sourceTree = "<group>"; };
 		B27A9C5A2C614B082C61B571 /* RootFlowViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootFlowViewControllerSpec.m; sourceTree = "<group>"; };
 		B27A9CBCD20A35C2CCB8EBB3 /* GenericUpdateContentOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericUpdateContentOperation.h; sourceTree = "<group>"; };
 		B27A9CBD12E917178C3BE30F /* NetworkLayer+ExampleApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetworkLayer+ExampleApp.m"; sourceTree = "<group>"; };
@@ -208,14 +222,12 @@
 		B27A9D136EFF1D17CE0A6B22 /* UsersNetworkLayerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersNetworkLayerRequest.m; sourceTree = "<group>"; };
 		B27A9D886EB5BB4541CAE68C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B27A9DE75A1DE77CE15F0538 /* UsersNetworkLayerRequestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersNetworkLayerRequestSpec.m; sourceTree = "<group>"; };
-		B27A9E1F4AC9F6EA176F3428 /* AlbumPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumPhotosViewController.h; sourceTree = "<group>"; };
 		B27A9E29729716BE081C9E0E /* AbstractAsynchronousOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractAsynchronousOperation.h; sourceTree = "<group>"; };
 		B27A9E445A17E92C325EDEFF /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
 		B27A9E4595007EFD8F871256 /* FakeOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeOperationQueue.m; sourceTree = "<group>"; };
 		B27A9E48B3FA3BA5C4254157 /* NSManagedObject+SpecHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+SpecHelpers.m"; sourceTree = "<group>"; };
 		B27A9EAF8FD8F98F67D1B199 /* ImageControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageControllerSpec.m; sourceTree = "<group>"; };
 		B27A9EB6FF53E929FF7894C6 /* AlbumPhoto+ImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AlbumPhoto+ImageCache.h"; sourceTree = "<group>"; };
-		B27A9F08862E0289B8B12544 /* AlbumPhotosViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumPhotosViewControllerSpec.m; sourceTree = "<group>"; };
 		B27A9F22210FD0D28F18806A /* ApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationController.h; sourceTree = "<group>"; };
 		B27A9F5B05237ED5AE15223C /* RootFlowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootFlowViewController.h; sourceTree = "<group>"; };
 		B27A9F8E35003C7E07C71A93 /* AlbumPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumPhoto.m; sourceTree = "<group>"; };
@@ -330,14 +342,14 @@
 			path = Generic;
 			sourceTree = "<group>";
 		};
-		B27A90B043B7EB46362B468A /* Albums Providers */ = {
+		B27A90B043B7EB46362B468A /* Content Providers */ = {
 			isa = PBXGroup;
 			children = (
 				B27A940EED42BA5108B3B023 /* UserAlbumsProvider.m */,
 				B27A9016478521C7B4C3FA26 /* UserAlbumsProvider.h */,
 				B27A92F2D09F054AE9703089 /* UserAlbumsProviderSpec.m */,
 			);
-			path = "Albums Providers";
+			path = "Content Providers";
 			sourceTree = "<group>";
 		};
 		B27A924F598CA2E44C3970DD /* Generic */ = {
@@ -362,8 +374,19 @@
 			children = (
 				B27A9B88F72603492F740C58 /* Users.JSON */,
 				B27A95FDB84EF6B7006ACE05 /* Albums.JSON */,
+				B27A95A53762736ED393D191 /* AlbumsPhotos.JSON */,
 			);
 			path = "Fixture Responses";
+			sourceTree = "<group>";
+		};
+		B27A944CCA33854D787C45D0 /* Updaters */ = {
+			isa = PBXGroup;
+			children = (
+				B27A9C452A466002C8757F50 /* AlbumsPhotosUpdater.m */,
+				B27A9AA32BCE2FFC2C9B021E /* AlbumsPhotosUpdater.h */,
+				B27A965C7143E0BFE58AC0CC /* AlbumsPhotosUpdaterSpec.m */,
+			);
+			path = Updaters;
 			sourceTree = "<group>";
 		};
 		B27A945A1032AE0B484BC3E9 /* Helpers */ = {
@@ -373,6 +396,14 @@
 				B27A96DCCCA326E0E824F98C /* PendingRequestContainer.h */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B27A9472BD24256A15CE73C7 /* Album Photos View */ = {
+			isa = PBXGroup;
+			children = (
+				B27A9BB147958BA5CCF4AB61 /* Content Providers */,
+			);
+			path = "Album Photos View";
 			sourceTree = "<group>";
 		};
 		B27A948A884652EB2F62AC03 /* Core Data */ = {
@@ -409,6 +440,9 @@
 				B27A92DEDB6A63B8C3B52203 /* AlbumsNetworkLayerRequest.m */,
 				B27A9654B77990DAC34E2D66 /* AlbumsNetworkLayerRequest.h */,
 				B27A91A09F217D4893E32AD9 /* AlbumsNetworkLayerRequestSpec.m */,
+				B27A9BDF7FD8BEA331C4DC59 /* AlbumsPhotosNetworkLayerRequest.m */,
+				B27A98A4351EC8BB55F9DB7A /* AlbumsPhotosNetworkLayerRequest.h */,
+				B27A9C1FAC76A35EF722FD61 /* AlbumsPhotosNetworkLayerRequestSpec.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -420,12 +454,12 @@
 				B27A924F598CA2E44C3970DD /* Generic */,
 				B27A9CF8D82F49A826E58695 /* Model */,
 				B27A95F4B6FA0097C622B942 /* Persistence Controller */,
-				B27A9DCFBEAA41E25C0E50EE /* Photos View */,
 				B27A99723F0265D347D6DE03 /* Root Flow View Controller */,
 				B27A9A5F55B2873EF970525E /* Users View */,
 				B27A97AF8877285590A672B8 /* AppDelegate.h */,
 				B27A94E7F117DF867BFA52BA /* AppDelegate.m */,
 				B27A99EA5590D5F4BC2C0944 /* AppDelegateSpec.m */,
+				B27A9472BD24256A15CE73C7 /* Album Photos View */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -476,7 +510,7 @@
 		B27A99AAEE3CCEF53C4A1801 /* Albums View */ = {
 			isa = PBXGroup;
 			children = (
-				B27A90B043B7EB46362B468A /* Albums Providers */,
+				B27A90B043B7EB46362B468A /* Content Providers */,
 				B27A9E0C8715DFBF2543895F /* Presentation Controllers */,
 				B27A99EDADDD78B91AEE643C /* View */,
 			);
@@ -545,8 +579,19 @@
 				B27A994C2DEF795BB19360C6 /* AlbumsUpdater.h */,
 				B27A990BB1461C3F5B996F03 /* AlbumsUpdaterSpec.m */,
 				B27A9697079ACA55DF179C20 /* Requests */,
+				B27A944CCA33854D787C45D0 /* Updaters */,
 			);
 			path = "Albums Controller";
+			sourceTree = "<group>";
+		};
+		B27A9BB147958BA5CCF4AB61 /* Content Providers */ = {
+			isa = PBXGroup;
+			children = (
+				B27A958E37704BA2D7040577 /* AlbumPhotosProvider.m */,
+				B27A9749CF61905261B13970 /* AlbumPhotosProvider.h */,
+				B27A922E983F32E3DB078C47 /* AlbumPhotosProviderSpec.m */,
+			);
+			path = "Content Providers";
 			sourceTree = "<group>";
 		};
 		B27A9BF8EF3B42AFAA2177EB /* Foundation */ = {
@@ -615,16 +660,6 @@
 				430EF4A41C3FFDE50024D130 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		B27A9DCFBEAA41E25C0E50EE /* Photos View */ = {
-			isa = PBXGroup;
-			children = (
-				B27A9AED0F9F3057894028F4 /* AlbumPhotosViewController.m */,
-				B27A9E1F4AC9F6EA176F3428 /* AlbumPhotosViewController.h */,
-				B27A9F08862E0289B8B12544 /* AlbumPhotosViewControllerSpec.m */,
-			);
-			path = "Photos View";
 			sourceTree = "<group>";
 		};
 		B27A9E0C8715DFBF2543895F /* Presentation Controllers */ = {
@@ -785,6 +820,7 @@
 				B27A9839607802D0D6A31F24 /* Users.JSON in Resources */,
 				B27A9A27625023F80AFD2B67 /* Albums.JSON in Resources */,
 				430EF4AC1C4397230024D130 /* test.png in Resources */,
+				B27A9B06A67475ECACA4152F /* AlbumsPhotos.JSON in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,7 +939,6 @@
 				B27A9705E47CEA550E33380A /* AllUsersProvider.m in Sources */,
 				B27A97EF64F4A657F8354EF7 /* NavigationViewControllerPresenter.m in Sources */,
 				B27A9B757EC792FFEE03EAF1 /* TestAppDelegate.m in Sources */,
-				B27A93010C99CEA3C0846007 /* AlbumPhotosViewController.m in Sources */,
 				B27A9CC05058E0464C344886 /* ApplicationController.m in Sources */,
 				B27A94CAD314F7300B9A7EDC /* NSManagedObject+Convenience.m in Sources */,
 				B27A996B08243889AB19BA1D /* AbstractAsynchronousOperation.m in Sources */,
@@ -925,6 +960,9 @@
 				B27A9C1A141B2EAAD31FFCD6 /* TableContentViewController.m in Sources */,
 				B27A934F0A203AA07BFAC326 /* UserPresentationController.m in Sources */,
 				B27A9F80762B7A4B9FBE207E /* AlbumPresentationController.m in Sources */,
+				B27A958FEF893D4428C593E5 /* AlbumPhotosProvider.m in Sources */,
+				B27A9D95E85A2E61F44205CB /* AlbumsPhotosNetworkLayerRequest.m in Sources */,
+				B27A9C11AD1C7C72F5A2A5E4 /* AlbumsPhotosUpdater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -938,7 +976,6 @@
 				B27A928EE96A7676BE9D718A /* NavigationViewControllerPresenterSpec.m in Sources */,
 				B27A902AF126787B26700E36 /* AppDelegateSpec.m in Sources */,
 				B27A9470136DEDAC63C43806 /* PersistenceControllerSpec.m in Sources */,
-				B27A922A14EAC8DEBA62301B /* AlbumPhotosViewControllerSpec.m in Sources */,
 				B27A9E9B654792310F00318F /* ApplicationControllerSpec.m in Sources */,
 				B27A9B5ACBB3DDE82AC7E7BA /* UsersUpdaterSpec.m in Sources */,
 				B27A9AD93CF4C48A5AB30B02 /* FixtureResponses.m in Sources */,
@@ -958,6 +995,9 @@
 				B27A9B6AA63A0ED6AA38BCA8 /* TableContentViewControllerSpec.m in Sources */,
 				B27A954B445CCB85B0CF512A /* UserPresentationControllerSpec.m in Sources */,
 				B27A906308B27D653107BCD6 /* AlbumPresentationControllerSpec.m in Sources */,
+				B27A9871BE5C42CBD7DE5F04 /* AlbumPhotosProviderSpec.m in Sources */,
+				B27A93056BEC4C8A10068FF9 /* AlbumsPhotosNetworkLayerRequestSpec.m in Sources */,
+				B27A9361B7F857D1ACD96748 /* AlbumsPhotosUpdaterSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

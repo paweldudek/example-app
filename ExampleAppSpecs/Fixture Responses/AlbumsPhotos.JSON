@@ -1,0 +1,14 @@
+[
+  {
+    "albumId": 84,
+    "id": 42,
+    "title": "Fixture Title 1",
+    "thumbnailUrl": "http://fixture1.com"
+  },
+  {
+    "albumId": 85,
+    "id": 43,
+    "title": "Fixture Title 2",
+    "thumbnailUrl": "http://fixture2.com"
+  }
+]

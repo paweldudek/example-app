@@ -13,7 +13,7 @@
 
 @property(nonatomic, readonly) User *user;
 
-@property(nonatomic, readonly) AlbumController *albumsController;
+@property(nonatomic, readonly) AlbumController *albumController;
 
 @property(nonatomic, readonly) PersistenceController *persistenceController;
 

@@ -22,7 +22,6 @@ Then you can just call `rake` to execute tests.
 * Table view updates are not animated due to time constraint
 * Core Data model does not use relationships as they would create additional implementation and maintenance overhead and at this point they don't seem to be worth it.
 * Core Data performance is less than suboptimal, however given timeframe and data set I didn't focus much on optimizing it
-* Some components could be more reusable, like for instance `UsersViewController` is a great candidate for a generic list presentation view controller.
 * User cells layout seems to be off (<3 Autolayout in xibs, need to move this to code)
 * Data in content providers is loaded too often, this should be done using a `NSFetchedResultsController`, but again - time constraint ;)
 

@@ -5,6 +5,8 @@
 
 
 @implementation AlbumPhoto
+@dynamic title;
 @dynamic identifier;
 @dynamic thumbnailUrl;
+@dynamic albumIdentifier;
 @end

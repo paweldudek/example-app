@@ -9,8 +9,7 @@
 #import "ApplicationController.h"
 #import "UserAlbumsProvider.h"
 #import "SearchUsersProvider.h"
-#import "AlbumPresentationController.h"
-#import "AlbumPhotosViewController.h"
+#import "AlbumPhotosProvider.h"
 
 
 @interface RootFlowViewController ()
@@ -89,8 +88,13 @@
 #pragma mark - Albums Presentation Controller Delegate
 
 - (void)albumPresentationController:(AlbumPresentationController *)controller didSelectAlbum:(Album *)album {
-    AlbumPhotosViewController *albumPhotosViewController = [[AlbumPhotosViewController alloc] init];
-    [self.viewControllerPresenter pushViewController:albumPhotosViewController animated:YES completion:nil];
+    AlbumPhotosProvider *albumPhotosProvider = [[AlbumPhotosProvider alloc] initWithAlbum:album
+                                                                          albumController:self.applicationController.albumController
+                                                                    persistenceController:self.applicationController.persistenceController];
+    
+    TableContentViewController *albumsViewController = [[TableContentViewController alloc] initWithContentProvider:albumPhotosProvider
+                                                                                tableContentPresentationController:nil];
+    [self.viewControllerPresenter pushViewController:albumsViewController animated:YES completion:nil];
 }
 
 @end
