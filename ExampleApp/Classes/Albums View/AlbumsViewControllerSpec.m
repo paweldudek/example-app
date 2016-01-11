@@ -8,15 +8,30 @@ describe(@"AlbumsViewController", ^{
 
     __block AlbumsViewController *sut;
 
+    __block id mockAlbumsProvider;
+
     beforeEach(^{
-        sut = [[AlbumsViewController alloc] init];
+        mockAlbumsProvider = mockProtocol(@protocol(AlbumsProvider));
+        sut = [[AlbumsViewController alloc] initWithAlbumsProvider:mockAlbumsProvider];
     });
 
     afterEach(^{
         sut = nil;
     });
 
-    describe(@"", ^{
+    it(@"should set itself as delegate of the albums provider", ^{
+        [verify(mockAlbumsProvider) setDelegate:sut];
+    });
+
+    describe(@"view", ^{
+
+        action(^{
+            [sut loadViewIfNeeded];
+        });
+
+        it(@"should tell the albums provider to update content", ^{
+            [verify(mockAlbumsProvider) updateContent];
+        });
 
     });
 });

@@ -18,7 +18,7 @@
 
 @end
 
-@interface AlbumsViewController : UIViewController
+@interface AlbumsViewController : UIViewController <ContentProviderDelegate>
 
 @property(nonatomic, readonly) id <AlbumsProvider> albumsProvider;
 

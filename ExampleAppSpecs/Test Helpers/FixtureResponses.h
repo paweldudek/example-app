@@ -8,4 +8,6 @@
 
 + (NSArray *)fixtureUsersResponse;
 
++ (NSArray *)fixtureAlbumsResponse;
+
 @end

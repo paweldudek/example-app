@@ -1,19 +1,17 @@
 #import "Specs.h"
 
-#import "UpdateUsersOperation.h"
-#import "UsersUpdater.h"
+#import "GenericUpdateContentOperation.h"
 #import "NetworkLayerExampleAppSharedSpec.h"
 #import "PersistenceController.h"
-#import "NSManagedObjectContext+SpecHelpers.h"
 #import "FakeOperationQueue.h"
 #import "NetworkLayer.h"
 #import "UsersNetworkLayerRequest.h"
 
-SpecBegin(UpdateUsersOperation)
+SpecBegin(GenericUpdateContentOperation)
 
-describe(@"UpdateUsersOperation", ^{
+describe(@"GenericUpdateContentOperation", ^{
 
-    __block UpdateUsersOperation *sut;
+    __block GenericUpdateContentOperation *sut;
     __block id mockPersistenceController;
 
     IN_MEMORY_CORE_DATA
@@ -22,15 +20,11 @@ describe(@"UpdateUsersOperation", ^{
         mockPersistenceController = mock([PersistenceController class]);
         [given([mockPersistenceController mainThreadManagedObjectContext]) willReturn:[NSManagedObjectContext specsManagedObjectContext]];
 
-        sut = [[UpdateUsersOperation alloc] initWithPersistenceController:mockPersistenceController];
+        sut = [[GenericUpdateContentOperation alloc] initWithPersistenceController:mockPersistenceController];
     });
 
     afterEach(^{
         sut = nil;
-    });
-
-    it(@"should have users updater", ^{
-        expect(sut.usersUpdater).to.beKindOf([UsersUpdater class]);
     });
 
     it(@"should have a completion queue", ^{
@@ -54,8 +48,12 @@ describe(@"UpdateUsersOperation", ^{
         __block id requestIdentifier;
 
         __block FakeOperationQueue *fakeCompletionQueue;
+        __block id mockRequest;
 
         beforeEach(^{
+            mockRequest = mockProtocol(@protocol(NetworkLayerRequest));
+            sut.request = mockRequest;
+
             requestIdentifier = [NSObject new];
 
             mockNetworkLayer = mock([NetworkLayer class]);
@@ -87,8 +85,8 @@ describe(@"UpdateUsersOperation", ^{
                 completion = [completionCaptor value];
             });
 
-            it(@"should make a user network layer request", ^{
-                expect(request).to.beKindOf([UsersNetworkLayerRequest class]);
+            it(@"should make the network layer request", ^{
+                expect(request).to.equal(mockRequest);
             });
 
             describe(@"when it is successful", ^{
@@ -96,15 +94,15 @@ describe(@"UpdateUsersOperation", ^{
                 __block NSArray *usersResponse;
                 __block PersistenceControllerSaveCompletion saveCompletion;
 
-                __block id mockUsersUpdater;
+                __block id mockContentUpdater;
 
                 __block NSManagedObjectContext *privateManagedObjectContext;
 
                 beforeEach(^{
                     usersResponse = @[@{@"Fixture User Key 1" : @"Fixture User Key 1"}, @{@"Fixture User Key 2" : @"Fixture User Key 2"}];
 
-                    mockUsersUpdater = mock([UsersUpdater class]);
-                    sut.usersUpdater = mockUsersUpdater;
+                    mockContentUpdater = mockProtocol(@protocol(ContentUpdater));
+                    sut.contentUpdater = mockContentUpdater;
                 });
 
                 action(^{
@@ -123,9 +121,9 @@ describe(@"UpdateUsersOperation", ^{
                     privateManagedObjectContext = [managedObjectContextCaptor value];
                 });
 
-                it(@"should tell the questions updater to update questions", ^{
-                    [verify(mockUsersUpdater) updateUsersWithResponse:usersResponse
-                                                 managedObjectContext:privateManagedObjectContext];
+                it(@"should tell the content updater to update content", ^{
+                    [verify(mockContentUpdater) updateContentWithArray:usersResponse
+                                                  managedObjectContext:privateManagedObjectContext];
                 });
 
                 describe(@"when save is successful", ^{

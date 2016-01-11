@@ -5,4 +5,7 @@
 
 
 @implementation Album
+@dynamic title;
+@dynamic userIdentifier;
+@dynamic identifier;
 @end

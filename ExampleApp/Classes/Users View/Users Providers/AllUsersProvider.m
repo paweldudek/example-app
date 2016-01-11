@@ -32,11 +32,10 @@
 
 - (void)updateContent {
     [self.delegate contentProviderWillBeginUpdatingData:self];
+    self.allUsers = [User allFromContext:self.userController.persistenceController.mainThreadManagedObjectContext];
 
     [self.userController updateUsersWithCompletion:^(NSError *error) {
         self.allUsers = [User allFromContext:self.userController.persistenceController.mainThreadManagedObjectContext];
-//        NSLog(@"allUsers = %@", allUsers);
-
         [self.delegate contentProviderDidUpdateContent:self];
     }];
 }

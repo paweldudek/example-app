@@ -11,11 +11,10 @@
 
 @implementation UsersUpdater
 
-- (void)updateUsersWithResponse:(NSArray *)users managedObjectContext:(NSManagedObjectContext *)managedObjectContext {
-
+- (void)updateContentWithArray:(NSArray *)contentArray managedObjectContext:(NSManagedObjectContext *)managedObjectContext {
     NSMutableArray <User *> *deleteCandidates = [[User allFromContext:managedObjectContext] mutableCopy];
 
-    for (NSDictionary *userDictionary in users) {
+    for (NSDictionary *userDictionary in contentArray) {
         User *user = [User findFirstByIdentifier:userDictionary[@"id"]
                                      fromContext:managedObjectContext];
         if (user == nil) {
@@ -31,7 +30,8 @@
                            }];
 
         NSDictionary *companyDictionary = userDictionary[@"company"];
-        Company *company = [[Company alloc] initWithName:companyDictionary[@"name"] catchphrase:companyDictionary[@"catchPhrase"]];
+        Company *company = [[Company alloc] initWithName:companyDictionary[@"name"]
+                                             catchphrase:companyDictionary[@"catchPhrase"]];
         user.company = company;
 
         [deleteCandidates removeObject:user];

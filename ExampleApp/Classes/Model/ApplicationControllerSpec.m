@@ -3,6 +3,7 @@
 #import "ApplicationController.h"
 #import "UserController.h"
 #import "PersistenceController.h"
+#import "AlbumController.h"
 
 SpecBegin(ApplicationController)
 
@@ -30,11 +31,28 @@ describe(@"ApplicationController", ^{
         });
 
         it(@"should have a user controller", ^{
-            expect(sut.userController).to.beKindOf([UserController class]);
+            expect(userController).to.beKindOf([UserController class]);
         });
 
         it(@"should have the persistence controller", ^{
-            expect(sut.persistenceController).to.equal(mockPersistenceController);
+            expect(userController.persistenceController).to.equal(mockPersistenceController);
+        });
+    });
+
+    describe(@"album controller", ^{
+
+        __block AlbumController *albumController;
+
+        action(^{
+            albumController = [sut albumController];
+        });
+
+        it(@"should have a user controller", ^{
+            expect(albumController).to.beKindOf([AlbumController class]);
+        });
+
+        it(@"should have the persistence controller", ^{
+            expect(albumController.persistenceController).to.equal(mockPersistenceController);
         });
     });
 });

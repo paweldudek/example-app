@@ -2,26 +2,23 @@
  * Copyright (c) 2016 Paweł Dudek. All rights reserved.
  */
 #import <CoreData/CoreData.h>
-#import "UpdateUsersOperation.h"
-#import "UsersUpdater.h"
+#import "GenericUpdateContentOperation.h"
 #import "NetworkLayer.h"
 #import "NetworkLayer+ExampleApp.h"
-#import "UsersNetworkLayerRequest.h"
 #import "PersistenceController.h"
 
 
-@interface UpdateUsersOperation ()
+@interface GenericUpdateContentOperation ()
 @property(nonatomic, strong) id requestIdentifier;
 @end
 
-@implementation UpdateUsersOperation
+@implementation GenericUpdateContentOperation
 
 - (instancetype)initWithPersistenceController:(PersistenceController *)persistenceController {
     self = [super init];
     if (self) {
         _persistenceController = persistenceController;
 
-        self.usersUpdater = [[UsersUpdater alloc] init];
         self.networkLayer = [NetworkLayer exampleAppNetworkLayer];
 
         self.completionQueue = [NSOperationQueue mainQueue];
@@ -35,7 +32,7 @@
 - (void)start {
     [super start];
 
-    self.requestIdentifier = [self.networkLayer makeRequest:[UsersNetworkLayerRequest new]
+    self.requestIdentifier = [self.networkLayer makeRequest:self.request
                                                  completion:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                      if (error == nil) {
                                                          [self parseResponse:data];
@@ -61,7 +58,7 @@
     managedObjectContext.parentContext = self.persistenceController.mainThreadManagedObjectContext;
 
     [managedObjectContext performBlockAndWait:^{
-        [self.usersUpdater updateUsersWithResponse:parsedData managedObjectContext:managedObjectContext];
+        [self.contentUpdater updateContentWithArray:parsedData managedObjectContext:managedObjectContext];
     }];
 
     [self.persistenceController saveChildContext:managedObjectContext
@@ -71,7 +68,6 @@
 }
 
 #pragma mark - Finishing Helpers
-
 
 - (void)finishWithError:(NSError *)error {
     [self.completionQueue addOperationWithBlock:^{

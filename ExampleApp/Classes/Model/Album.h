@@ -6,4 +6,11 @@
 
 
 @interface Album : NSManagedObject
+
+@property(nonatomic, strong) NSString *title;
+
+@property(nonatomic, strong) NSNumber *userIdentifier;
+
+@property(nonatomic, strong) NSNumber *identifier;
+
 @end

@@ -71,7 +71,9 @@
 #pragma mark - Users View Controller Delegate
 
 - (void)usersViewController:(UsersViewController *)viewController didSelectUser:(User *)user {
-    UserAlbumsProvider *albumsProvider = [[UserAlbumsProvider alloc] initWithUser:user];
+    UserAlbumsProvider *albumsProvider = [[UserAlbumsProvider alloc] initWithUser:user
+                                                                  albumController:self.applicationController.albumController
+                                                            persistenceController:self.applicationController.persistenceController];
 
     AlbumsViewController *albumsViewController = [[AlbumsViewController alloc] initWithAlbumsProvider:albumsProvider];
     albumsViewController.delegate = self;

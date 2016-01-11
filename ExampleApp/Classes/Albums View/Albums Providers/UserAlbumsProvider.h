@@ -6,13 +6,18 @@
 #import "AlbumsViewController.h"
 
 @class User;
+@class AlbumController;
+@class PersistenceController;
 
 
 @interface UserAlbumsProvider : NSObject <AlbumsProvider>
 
 @property(nonatomic, readonly) User *user;
 
-- (instancetype)initWithUser:(User *)user;
+@property(nonatomic, readonly) AlbumController *albumsController;
 
+@property(nonatomic, readonly) PersistenceController *persistenceController;
+
+- (instancetype)initWithUser:(User *)user albumController:(AlbumController *)albumsController persistenceController:(PersistenceController *)persistenceController;
 
 @end

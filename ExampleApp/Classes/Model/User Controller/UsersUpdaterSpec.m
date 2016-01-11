@@ -22,13 +22,13 @@ describe(@"UsersUpdater", ^{
         sut = nil;
     });
 
-    describe(@"", ^{
+    describe(@"update content", ^{
 
         IN_MEMORY_CORE_DATA
 
         action(^{
-            [sut updateUsersWithResponse:[FixtureResponses fixtureUsersResponse]
-                    managedObjectContext:[NSManagedObjectContext specsManagedObjectContext]];
+            [sut updateContentWithArray:[FixtureResponses fixtureUsersResponse]
+                   managedObjectContext:[NSManagedObjectContext specsManagedObjectContext]];
             [NSManagedObjectContext specSave];
             [NSManagedObjectContext specReset];
         });

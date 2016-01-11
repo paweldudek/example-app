@@ -5,7 +5,7 @@
 
 @class PersistenceController;
 
-@interface UserController : NSObject
+@interface AlbumController : NSObject
 
 @property(nonatomic, readonly) PersistenceController *persistenceController;
 
@@ -13,6 +13,6 @@
 
 - (instancetype)initWithPersistenceController:(PersistenceController *)persistenceController;
 
-- (void)updateUsersWithCompletion:(void (^)(NSError *))completion;
+- (void)updateAlbumsWithCompletion:(void (^)(NSError *))completion;
 
 @end

@@ -18,6 +18,7 @@
 #import "UserAlbumsProvider.h"
 #import "SearchUsersProvider.h"
 #import "PersistenceController.h"
+#import "AlbumController.h"
 
 SpecBegin(RootFlowViewController)
 
@@ -26,15 +27,18 @@ describe(@"RootFlowViewController", ^{
     __block RootFlowViewController *sut;
 
     __block id mockUserController;
+    __block id mockAlbumController;
     __block id mockPersistenceController;
 
     beforeEach(^{
         mockUserController = mock([UserController class]);
         id mockApplicationController = mock([ApplicationController class]);
         mockPersistenceController = mock([PersistenceController class]);
+        mockAlbumController = mock([AlbumController class]);
 
         [given([mockApplicationController userController]) willReturn:mockUserController];
         [given([mockApplicationController persistenceController]) willReturn:mockPersistenceController];
+        [given([mockApplicationController albumController]) willReturn:mockAlbumController];
 
         sut = [[RootFlowViewController alloc] initWithApplicationController:mockApplicationController];
     });
@@ -240,6 +244,14 @@ describe(@"RootFlowViewController", ^{
 
                 it(@"should have the passed in user", ^{
                     expect(albumsProvider.user).to.equal(user);
+                });
+
+                it(@"should have a persistence controller", ^{
+                    expect(albumsProvider.persistenceController).to.equal(mockPersistenceController);
+                });
+
+                it(@"should have album controller", ^{
+                    expect(albumsProvider.albumsController).to.equal(mockAlbumController);
                 });
             });
         });

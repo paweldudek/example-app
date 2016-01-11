@@ -2,8 +2,10 @@
  * Copyright (c) 2016 Paweł Dudek. All rights reserved.
  */
 #import "UserController.h"
-#import "UpdateUsersOperation.h"
+#import "GenericUpdateContentOperation.h"
 #import "PersistenceController.h"
+#import "UsersNetworkLayerRequest.h"
+#import "UsersUpdater.h"
 
 
 @implementation UserController
@@ -22,7 +24,9 @@
 #pragma mark - Updating Users
 
 - (void)updateUsersWithCompletion:(void (^)(NSError *))completion {
-    UpdateUsersOperation *operation = [[UpdateUsersOperation alloc] initWithPersistenceController:self.persistenceController];
+    GenericUpdateContentOperation *operation = [[GenericUpdateContentOperation alloc] initWithPersistenceController:self.persistenceController];
+    operation.contentUpdater = [[UsersUpdater alloc] init];
+    operation.request = [UsersNetworkLayerRequest new];
     operation.updateCompletion = completion;
     [self.operationQueue addOperation:operation];
 }

@@ -4,9 +4,6 @@
 #import <Foundation/Foundation.h>
 #import "GenericUpdateContentOperation.h"
 
-@class NSManagedObjectContext;
 
-
-@interface UsersUpdater : NSObject <ContentUpdater>
-
+@interface AlbumsUpdater : NSObject <ContentUpdater>
 @end

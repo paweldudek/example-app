@@ -8,11 +8,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="110" id="P4b-gP-JBZ" customClass="UserTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="95" id="P4b-gP-JBZ" customClass="UserTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P4b-gP-JBZ" id="Y1j-gV-kP5">
-                <rect key="frame" x="0.0" y="0.0" width="287" height="109"/>
+                <rect key="frame" x="0.0" y="0.0" width="287" height="94"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXy-RR-ftE">
@@ -51,7 +51,7 @@
                 <outlet property="emailLabel" destination="lrb-Mr-Fpq" id="Wic-8e-Tkk"/>
                 <outlet property="nameLabel" destination="EXy-RR-ftE" id="aHf-AR-xHi"/>
             </connections>
-            <point key="canvasLocation" x="437" y="466"/>
+            <point key="canvasLocation" x="437" y="458.5"/>
         </tableViewCell>
     </objects>
 </document>

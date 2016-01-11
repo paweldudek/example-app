@@ -3,6 +3,8 @@
 #import "UserAlbumsProvider.h"
 #import "NSManagedObject+SpecHelpers.h"
 #import "User.h"
+#import "AlbumController.h"
+#import "PersistenceController.h"
 
 SpecBegin(UserAlbumsProvider)
 
@@ -13,10 +15,21 @@ describe(@"UserAlbumsProvider", ^{
     __block UserAlbumsProvider *sut;
     __block User *user;
 
+    __block id mockAlbumController;
+    __block id mockPersistenceController;
+
     beforeEach(^{
+        mockAlbumController = mock([AlbumController class]);
+        mockPersistenceController = mock([PersistenceController class]);
+
+        [given([mockPersistenceController mainThreadManagedObjectContext]) willReturn:[NSManagedObjectContext specsManagedObjectContext]];
+
         user = [User specsEmptyObject];
         user.name = @"Fixture Username";
-        sut = [[UserAlbumsProvider alloc] initWithUser:user];
+
+        sut = [[UserAlbumsProvider alloc] initWithUser:user
+                                       albumController:mockAlbumController
+                                 persistenceController:mockPersistenceController];
     });
 
     afterEach(^{
@@ -27,9 +40,17 @@ describe(@"UserAlbumsProvider", ^{
         expect(sut.title).to.equal(@"Fixture Username");
     });
 
-    describe(@"", ^{
-        
+    describe(@"update content", ^{
+
+        action(^{
+            [sut updateContent];
+        });
+
+        it(@"should tell its album updater to update albums", ^{
+            [verify(mockAlbumController) updateAlbumsWithCompletion:anything()];
+        });
     });
+
 });
 
 SpecEnd

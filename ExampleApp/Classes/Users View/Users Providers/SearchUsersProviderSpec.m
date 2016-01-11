@@ -39,6 +39,10 @@ describe(@"SearchUsersProvider", ^{
         it(@"should inform its delegate that it updated content", ^{
             [verify(mockDelegate) contentProviderDidUpdateContent:sut];
         });
+
+        it(@"should have all the tests in place", ^{
+            expect(NO).to.beTruthy();
+        });
     });
 });
 

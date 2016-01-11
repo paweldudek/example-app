@@ -1,21 +1,20 @@
 #import "Specs.h"
 
-#import "UserController.h"
-#import "GenericUpdateContentOperation.h"
+#import "AlbumController.h"
 #import "PersistenceController.h"
-#import "UsersUpdater.h"
+#import "GenericUpdateContentOperation.h"
+#import "AlbumsUpdater.h"
 
-SpecBegin(UserController)
+SpecBegin(AlbumsController)
 
-describe(@"UserController", ^{
+describe(@"AlbumController", ^{
 
-    __block UserController *sut;
+    __block AlbumController *sut;
     __block id mockPersistenceController;
 
     beforeEach(^{
         mockPersistenceController = mock([PersistenceController class]);
-
-        sut = [[UserController alloc] initWithPersistenceController:mockPersistenceController];
+        sut = [[AlbumController alloc] initWithPersistenceController:mockPersistenceController];
     });
 
     afterEach(^{
@@ -26,7 +25,7 @@ describe(@"UserController", ^{
         expect(sut.operationQueue).to.beKindOf([NSOperationQueue class]);
     });
 
-    describe(@"update users", ^{
+    describe(@"update albums", ^{
 
         __block NSError *capturedError;
         __block id mockOperationQueue;
@@ -37,7 +36,7 @@ describe(@"UserController", ^{
         });
 
         action(^{
-            [sut updateUsersWithCompletion:^(NSError *error) {
+            [sut updateAlbumsWithCompletion:^(NSError *error) {
                 capturedError = error;
             }];
         });
@@ -53,12 +52,12 @@ describe(@"UserController", ^{
                 operation = [captor value];
             });
 
-            it(@"should be generic update operation", ^{
+            it(@"should be albums update operation", ^{
                 expect(operation).to.beKindOf([GenericUpdateContentOperation class]);
             });
 
-            it(@"should have users updater", ^{
-                expect(operation.contentUpdater).to.beKindOf([UsersUpdater class]);
+            it(@"should have albums updater", ^{
+                expect(operation.contentUpdater).to.beKindOf([AlbumsUpdater class]);
             });
 
             it(@"should have the persistence controller", ^{
