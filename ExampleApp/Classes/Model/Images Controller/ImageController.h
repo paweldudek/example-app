@@ -7,6 +7,7 @@
 @class FICImageCache;
 
 
+
 @interface ImageController : NSObject <FICImageCacheDelegate>
 
 @property(nonatomic, strong) FICImageCache *imageCache;

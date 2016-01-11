@@ -83,6 +83,7 @@
 		B27A9E4B5431C4DF6BEF561F /* UsersNetworkLayerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9D136EFF1D17CE0A6B22 /* UsersNetworkLayerRequest.m */; };
 		B27A9E9B654792310F00318F /* ApplicationControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A96735425F802D9493879 /* ApplicationControllerSpec.m */; };
 		B27A9EA4A62C9BBE674DCC9F /* UserAlbumsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A940EED42BA5108B3B023 /* UserAlbumsProvider.m */; };
+		B27A9EBBB80A9775C46A0C20 /* FICImageFormat+ExampleApp.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A99EFA8CBFD43C05801C2 /* FICImageFormat+ExampleApp.m */; };
 		B27A9F28B13204801F59E79A /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9151D7AC478C63ADCF41 /* Company.m */; };
 		B27A9F61432D3614077DDC22 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9FADB592B90DA022FBFC /* LoadingView.m */; };
 		B27A9F78E0E6CB887AAA4D23 /* AlbumPhoto+ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A947FA832065861C76C86 /* AlbumPhoto+ImageCache.m */; };
@@ -195,6 +196,7 @@
 		B27A99E0954A58C8DF1DC36F /* FakeOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeOperationQueue.h; sourceTree = "<group>"; };
 		B27A99E4BAF20B61501F8B06 /* FixtureResponses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixtureResponses.h; sourceTree = "<group>"; };
 		B27A99EA5590D5F4BC2C0944 /* AppDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateSpec.m; sourceTree = "<group>"; };
+		B27A99EFA8CBFD43C05801C2 /* FICImageFormat+ExampleApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FICImageFormat+ExampleApp.m"; sourceTree = "<group>"; };
 		B27A99FC91806FDF233ED928 /* ContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerView.m; sourceTree = "<group>"; };
 		B27A99FD3673434E8B3AB847 /* Specs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Specs.h; sourceTree = "<group>"; };
 		B27A9A2B7853AE39D3544659 /* NSFileManager+ExampleApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ExampleApp.m"; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 		B27A9B7FC33CCE960C9CD1B5 /* TableContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableContentViewController.m; sourceTree = "<group>"; };
 		B27A9B88F72603492F740C58 /* Users.JSON */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Users.JSON; sourceTree = "<group>"; };
 		B27A9B98E30F9B858029C133 /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewCell.h; sourceTree = "<group>"; };
+		B27A9BCA0CB05C06A73F8B47 /* FICImageFormat+ExampleApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FICImageFormat+ExampleApp.h"; sourceTree = "<group>"; };
 		B27A9BCE1D00A494FB848327 /* NetworkLayerExampleAppSharedSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkLayerExampleAppSharedSpec.m; sourceTree = "<group>"; };
 		B27A9BDF7FD8BEA331C4DC59 /* AlbumsPhotosNetworkLayerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsPhotosNetworkLayerRequest.m; sourceTree = "<group>"; };
 		B27A9BE24A87381885187EF7 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -336,6 +339,8 @@
 			children = (
 				B27A947FA832065861C76C86 /* AlbumPhoto+ImageCache.m */,
 				B27A9EB6FF53E929FF7894C6 /* AlbumPhoto+ImageCache.h */,
+				B27A99EFA8CBFD43C05801C2 /* FICImageFormat+ExampleApp.m */,
+				B27A9BCA0CB05C06A73F8B47 /* FICImageFormat+ExampleApp.h */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -994,6 +999,7 @@
 				B27A9C11AD1C7C72F5A2A5E4 /* AlbumsPhotosUpdater.m in Sources */,
 				B27A972D75940B3F48E51883 /* AlbumPhotosPresentationController.m in Sources */,
 				B27A96E6A955D7870B20441C /* AlbumsUpdater.m in Sources */,
+				B27A9EBBB80A9775C46A0C20 /* FICImageFormat+ExampleApp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

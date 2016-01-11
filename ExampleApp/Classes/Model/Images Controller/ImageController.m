@@ -3,6 +3,7 @@
  */
 #import "ImageController.h"
 #import "FICImageCache.h"
+#import "FICImageFormat+ExampleApp.h"
 
 
 @implementation ImageController
@@ -12,7 +13,7 @@
     if (self) {
         self.imageCache = [[FICImageCache alloc] init];
         self.imageCache.delegate = self;
-        [self.imageCache setFormats:@[]];
+        [self.imageCache setFormats:@[[FICImageFormat tableViewCellImageFormat]]];
 
         self.session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     }
@@ -33,11 +34,13 @@
 - (void)imageCache:(FICImageCache *)imageCache wantsSourceImageForEntity:(id <FICEntity>)entity withFormatName:(NSString *)formatName completionBlock:(FICImageRequestCompletionBlock)completionBlock {
     NSURLRequest *request = [NSURLRequest requestWithURL:[entity sourceImageURLWithFormatName:formatName]];
 
-    [self.session downloadTaskWithRequest:request
-                        completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-                            UIImage *image = [UIImage imageWithContentsOfFile:location.relativePath];
-                            completionBlock(image);
-                        }];
+    NSURLSessionDownloadTask *downloadTask = [self.session downloadTaskWithRequest:request
+                                                                 completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+                                                                     // Don't use image with contents with file as it defers data read - this file will be remove after we exit this block
+                                                                     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfFile:location.relativePath]];
+                                                                     completionBlock(image);
+                                                                 }];
+    [downloadTask resume];
 }
 
 @end

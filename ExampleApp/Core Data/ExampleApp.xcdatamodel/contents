@@ -5,7 +5,7 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userIdentifier" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
     </entity>
-    <entity name="AlbumPhoto" syncable="YES">
+    <entity name="AlbumPhoto" representedClassName="AlbumPhoto" syncable="YES">
         <attribute name="albumIdentifier" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="thumbnailUrl" optional="YES" attributeType="Transformable" syncable="YES"/>
