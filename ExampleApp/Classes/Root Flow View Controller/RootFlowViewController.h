@@ -3,14 +3,15 @@
 */
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "UsersViewController.h"
-#import "AlbumsViewController.h"
+#import "TableContentViewController.h"
+#import "UserPresentationController.h"
+#import "AlbumPresentationController.h"
 
 @protocol ViewControllerPresenter;
 @class ApplicationController;
 
 
-@interface RootFlowViewController : UIViewController <UsersViewControllerDelegate, AlbumsViewControllerDelegate>
+@interface RootFlowViewController : UIViewController <UserPresentationControllerDelegate, AlbumPresentationControllerDelegate>
 
 @property(nonatomic, strong) id <ViewControllerPresenter> viewControllerPresenter;
 

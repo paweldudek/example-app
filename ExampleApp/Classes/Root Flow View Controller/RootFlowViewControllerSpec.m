@@ -3,14 +3,10 @@
 #import "RootFlowViewController.h"
 #import "ContainerView.h"
 #import "AllUsersProvider.h"
-#import "LoadingView.h"
 #import "ViewControllerPresenter.h"
 #import "NavigationViewControllerPresenter.h"
-#import "NSManagedObjectContext+SpecHelpers.h"
 #import "NSManagedObject+SpecHelpers.h"
 #import "User.h"
-#import "HCArgumentCaptor.h"
-#import "AlbumsViewController.h"
 #import "AlbumPhotosViewController.h"
 #import "Album.h"
 #import "ApplicationController.h"
@@ -19,6 +15,7 @@
 #import "SearchUsersProvider.h"
 #import "PersistenceController.h"
 #import "AlbumController.h"
+#import "AlbumPresentationController.h"
 
 SpecBegin(RootFlowViewController)
 
@@ -90,38 +87,51 @@ describe(@"RootFlowViewController", ^{
 
             describe(@"search results view controller", ^{
 
-                __block UsersViewController *searchResultsController;
+                __block TableContentViewController *searchResultsController;
 
                 action(^{
-                    searchResultsController = (UsersViewController *) [searchController searchResultsController];
+                    searchResultsController = (TableContentViewController *) [searchController searchResultsController];
                 });
 
                 it(@"should be a search users controller", ^{
-                    expect(searchResultsController).to.beKindOf([UsersViewController class]);
+                    expect(searchResultsController).to.beKindOf([TableContentViewController class]);
                 });
 
-                it(@"should have a delegate", ^{
-                    expect(searchResultsController.delegate).to.equal(sut);
+                describe(@"presentation controller", ^{
+
+                    __block UserPresentationController *tableContentPresentationController;
+
+                    action(^{
+                        tableContentPresentationController = (id) [searchResultsController tableContentPresentationController];
+                    });
+
+                    it(@"should be user presentation controller", ^{
+                        expect(tableContentPresentationController).to.beKindOf([UserPresentationController class]);
+                    });
+
+                    it(@"should have a delegate", ^{
+                        expect(tableContentPresentationController.delegate).to.equal(sut);
+                    });
                 });
 
                 describe(@"users provider", ^{
 
-                    __block SearchUsersProvider *usersProvider;
+                    __block SearchUsersProvider *contentProvider;
 
                     action(^{
-                        usersProvider = (SearchUsersProvider *) [searchResultsController usersProvider];
+                        contentProvider = (SearchUsersProvider *) [searchResultsController contentProvider];
                     });
 
                     it(@"should be a search users provider", ^{
-                        expect(usersProvider).to.beKindOf([SearchUsersProvider class]);
+                        expect(contentProvider).to.beKindOf([SearchUsersProvider class]);
                     });
 
                     it(@"should have the persistence controller", ^{
-                        expect(usersProvider.persistenceController).to.equal(mockPersistenceController);
+                        expect(contentProvider.persistenceController).to.equal(mockPersistenceController);
                     });
 
                     it(@"should be the search controller results updater", ^{
-                        expect(searchController.searchResultsUpdater).to.equal(usersProvider);
+                        expect(searchController.searchResultsUpdater).to.equal(contentProvider);
                     });
                 });
             });
@@ -157,34 +167,51 @@ describe(@"RootFlowViewController", ^{
                 
                 describe(@"top view controller", ^{
 
-                    __block UsersViewController *usersViewController;
+                    __block TableContentViewController *usersViewController;
                     
                     action(^{
-                        usersViewController = (UsersViewController *) [childViewController topViewController];
+                        usersViewController = (TableContentViewController *) [childViewController topViewController];
                     });
 
                     it(@"should be a users view controller", ^{
-                        expect(usersViewController).to.beKindOf([UsersViewController class]);
+                        expect(usersViewController).to.beKindOf([TableContentViewController class]);
                     });
 
-                    it(@"should have a delegate", ^{
-                        expect(usersViewController.delegate).to.equal(sut);
+                    describe(@"presentation controller", ^{
+
+                        __block UserPresentationController *tableContentPresentationController;
+
+                        action(^{
+                            tableContentPresentationController = (id) [usersViewController tableContentPresentationController];
+                        });
+
+                        it(@"should be user presentation controller", ^{
+                            expect(tableContentPresentationController).to.beKindOf([UserPresentationController class]);
+                        });
+
+                        it(@"should have a delegate", ^{
+                            expect(tableContentPresentationController.delegate).to.equal(sut);
+                        });
                     });
 
                     describe(@"users provider", ^{
 
-                        __block AllUsersProvider *usersProvider;
+                        __block AllUsersProvider *contentProvider;
 
                         action(^{
-                            usersProvider = (id) [usersViewController usersProvider];
+                            contentProvider = (id) [usersViewController contentProvider];
                         });
 
                         it(@"should be a all users provider", ^{
-                            expect(usersProvider).to.beKindOf([AllUsersProvider class]);
+                            expect(contentProvider).to.beKindOf([AllUsersProvider class]);
                         });
 
                         it(@"should have the user controller from application controller", ^{
-                            expect(usersProvider.userController).to.equal(mockUserController);
+                            expect(contentProvider.userController).to.equal(mockUserController);
+                        });
+
+                        it(@"should have the persistence controller from application controller", ^{
+                            expect(contentProvider.persistenceController).to.equal(mockPersistenceController);
                         });
                     });
                 });
@@ -192,7 +219,7 @@ describe(@"RootFlowViewController", ^{
         });
     });
 
-    describe(@"users view controller delegate", ^{
+    describe(@"users presentation controller delegate", ^{
         
         IN_MEMORY_CORE_DATA
 
@@ -207,12 +234,12 @@ describe(@"RootFlowViewController", ^{
         });
 
         action(^{
-            [sut usersViewController:nil didSelectUser:user];
+            [sut userPresentationController:nil didSelectUser:user];
         });
 
         describe(@"last presented view controller", ^{
 
-            __block AlbumsViewController *albumsViewController;
+            __block TableContentViewController *albumsViewController;
 
             action(^{
                 HCArgumentCaptor *argumentCaptor = [HCArgumentCaptor new];
@@ -223,35 +250,48 @@ describe(@"RootFlowViewController", ^{
             });
 
             it(@"should be an albums view controller", ^{
-                expect(albumsViewController).to.beKindOf([AlbumsViewController class]);
+                expect(albumsViewController).to.beKindOf([TableContentViewController class]);
             });
 
-            it(@"should have a delegate", ^{
-                expect(albumsViewController.delegate).to.equal(sut);
+            describe(@"presentation controller", ^{
+
+                __block AlbumPresentationController *tableContentPresentationController;
+
+                action(^{
+                    tableContentPresentationController = (id) [albumsViewController tableContentPresentationController];
+                });
+
+                it(@"should be user presentation controller", ^{
+                    expect(tableContentPresentationController).to.beKindOf([AlbumPresentationController class]);
+                });
+
+                it(@"should have a delegate", ^{
+                    expect(tableContentPresentationController.delegate).to.equal(sut);
+                });
             });
 
             describe(@"albums provider", ^{
 
-                __block UserAlbumsProvider *albumsProvider;
+                __block UserAlbumsProvider *contentProvider;
 
                 action(^{
-                    albumsProvider = [albumsViewController albumsProvider];
+                    contentProvider = [albumsViewController contentProvider];
                 });
 
                 it(@"should be a user albums provider", ^{
-                    expect(albumsProvider).to.beKindOf([UserAlbumsProvider class]);
+                    expect(contentProvider).to.beKindOf([UserAlbumsProvider class]);
                 });
 
                 it(@"should have the passed in user", ^{
-                    expect(albumsProvider.user).to.equal(user);
+                    expect(contentProvider.user).to.equal(user);
                 });
 
                 it(@"should have a persistence controller", ^{
-                    expect(albumsProvider.persistenceController).to.equal(mockPersistenceController);
+                    expect(contentProvider.persistenceController).to.equal(mockPersistenceController);
                 });
 
                 it(@"should have album controller", ^{
-                    expect(albumsProvider.albumsController).to.equal(mockAlbumController);
+                    expect(contentProvider.albumsController).to.equal(mockAlbumController);
                 });
             });
         });
@@ -272,7 +312,7 @@ describe(@"RootFlowViewController", ^{
         });
 
         action(^{
-            [sut albumsViewController:nil didSelectAlbum:album];
+            [sut albumPresentationController:nil didSelectAlbum:album];
         });
 
         describe(@"last presented view controller", ^{

@@ -25,4 +25,10 @@
 
 - (void)updateContent;
 
+#pragma mark - Data Source
+
+- (NSUInteger)numberOfObjects;
+
+- (id)objectAtIndex:(NSInteger)index;
+
 @end

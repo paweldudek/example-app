@@ -3,16 +3,14 @@
  */
 #import "RootFlowViewController.h"
 #import "ContainerView.h"
-#import "LoadingView.h"
-#import "UsersViewController.h"
 #import "AllUsersProvider.h"
 #import "ViewControllerPresenter.h"
-#import "AlbumsViewController.h"
 #import "NavigationViewControllerPresenter.h"
-#import "AlbumPhotosViewController.h"
 #import "ApplicationController.h"
 #import "UserAlbumsProvider.h"
 #import "SearchUsersProvider.h"
+#import "AlbumPresentationController.h"
+#import "AlbumPhotosViewController.h"
 
 
 @interface RootFlowViewController ()
@@ -36,7 +34,7 @@
     UINavigationController *navigationController = [[UINavigationController alloc] init];
     [self addChildViewController:navigationController];
 
-    UsersViewController *usersViewController = [self usersViewController];
+    TableContentViewController *usersViewController = [self usersViewController];
     navigationController.viewControllers = @[usersViewController];
 
     self.viewControllerPresenter = [[NavigationViewControllerPresenter alloc] initWithNavigationController:navigationController];
@@ -52,8 +50,10 @@
     [usersViewController loadViewIfNeeded];
     SearchUsersProvider *searchUsersProvider = [[SearchUsersProvider alloc] initWithPersistenceController:self.applicationController.persistenceController];
 
-    UsersViewController *usersSearchViewController = [[UsersViewController alloc] initWithUsersProvider:searchUsersProvider];
-    usersSearchViewController.delegate = self;
+    UserPresentationController *userPresentationController = [[UserPresentationController alloc] init];
+    userPresentationController.delegate = self;
+    TableContentViewController *usersSearchViewController = [[TableContentViewController alloc] initWithContentProvider:searchUsersProvider
+                                                                                     tableContentPresentationController:userPresentationController];
     self.userSearchController = [[UISearchController alloc] initWithSearchResultsController:usersSearchViewController];
     self.userSearchController.searchResultsUpdater = searchUsersProvider;
     usersViewController.tableView.tableHeaderView = self.userSearchController.searchBar;
@@ -61,29 +61,34 @@
 
 #pragma mark - Loading Helpers
 
-- (UsersViewController *)usersViewController {
+- (TableContentViewController *)usersViewController {
     AllUsersProvider *allUsersProvider = [[AllUsersProvider alloc] initWithUserController:self.applicationController.userController
                                                                     persistenceController:self.applicationController.persistenceController];
-    UsersViewController *usersViewController = [[UsersViewController alloc] initWithUsersProvider:allUsersProvider];
-    usersViewController.delegate = self;
+    UserPresentationController *userPresentationController = [[UserPresentationController alloc] init];
+    userPresentationController.delegate = self;
+    TableContentViewController *usersViewController = [[TableContentViewController alloc] initWithContentProvider:allUsersProvider
+                                                                               tableContentPresentationController:userPresentationController];
     return usersViewController;
 }
 
-#pragma mark - Users View Controller Delegate
+#pragma mark - Users Presentation Controller Delegate
 
-- (void)usersViewController:(UsersViewController *)viewController didSelectUser:(User *)user {
+- (void)userPresentationController:(UserPresentationController *)presentationController didSelectUser:(User *)user {
     UserAlbumsProvider *albumsProvider = [[UserAlbumsProvider alloc] initWithUser:user
                                                                   albumController:self.applicationController.albumController
                                                             persistenceController:self.applicationController.persistenceController];
 
-    AlbumsViewController *albumsViewController = [[AlbumsViewController alloc] initWithAlbumsProvider:albumsProvider];
-    albumsViewController.delegate = self;
+    AlbumPresentationController *albumPresentationController = [[AlbumPresentationController alloc] init];
+    albumPresentationController.delegate = self;
+
+    TableContentViewController *albumsViewController = [[TableContentViewController alloc] initWithContentProvider:albumsProvider
+                                                                                tableContentPresentationController:albumPresentationController];
     [self.viewControllerPresenter pushViewController:albumsViewController animated:YES completion:nil];
 }
 
-#pragma mark - Albums View Controller Delegate
+#pragma mark - Albums Presentation Controller Delegate
 
-- (void)albumsViewController:(AlbumsViewController *)viewController didSelectAlbum:(Album *)album {
+- (void)albumPresentationController:(AlbumPresentationController *)controller didSelectAlbum:(Album *)album {
     AlbumPhotosViewController *albumPhotosViewController = [[AlbumPhotosViewController alloc] init];
     [self.viewControllerPresenter pushViewController:albumPhotosViewController animated:YES completion:nil];
 }

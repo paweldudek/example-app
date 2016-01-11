@@ -2,7 +2,7 @@
 /*
  * Copyright (c) 2016 Paweł Dudek. All rights reserved.
  */
-#import "UsersViewController.h"
+#import "TableContentViewController.h"
 #import "User.h"
 #import "ContainerView.h"
 #import "UserTableViewCell.h"
@@ -10,19 +10,21 @@
 #import "LoadingView.h"
 
 
-@interface UsersViewController ()
+@interface TableContentViewController ()
 @property(nonatomic, readwrite) UITableView *tableView;
 @end
 
-@implementation UsersViewController
+@implementation TableContentViewController
 
-- (instancetype)initWithUsersProvider:(id <UsersProvider>)usersProvider {
+- (instancetype)initWithContentProvider:(id <ContentProvider>)contentProvider tableContentPresentationController:(id <TableContentPresentationController>)tableContentPresentationController {
     self = [super init];
     if (self) {
-        _usersProvider = usersProvider;
-        _usersProvider.delegate = self;
-        self.title = _usersProvider.title;
+        _contentProvider = contentProvider;
+        _contentProvider.delegate = self;
 
+        _tableContentPresentationController = tableContentPresentationController;
+
+        self.title = _contentProvider.title;
         self.definesPresentationContext = YES;
     }
 
@@ -51,8 +53,7 @@
     tableView.delegate = self;
     tableView.dataSource = self;
 
-    UINib *cellNib = [UINib nibWithNibName:@"UserTableViewCell" bundle:nil];
-    [tableView registerNib:cellNib forCellReuseIdentifier:@"Cell"];
+    [tableView registerNib:self.tableContentPresentationController.tableViewCellNib forCellReuseIdentifier:@"Cell"];
 
     self.tableView = tableView;
 }
@@ -60,7 +61,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self.usersProvider updateContent];
+    [self.contentProvider updateContent];
 }
 
 #pragma mark - Dynamic View Getter
@@ -94,25 +95,23 @@
 #pragma mark - UITableView Data Source & Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.usersProvider.numberOfUsers;
+    return self.contentProvider.numberOfObjects;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    User *user = [self.usersProvider userAtIndex:indexPath.row];
-    [self.delegate usersViewController:self didSelectUser:user];
+    id object = [self.contentProvider objectAtIndex:indexPath.row];
+    [self.tableContentPresentationController selectObject:object];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
+    return self.tableContentPresentationController.estimatedCellHeight;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    User *user = [self.usersProvider userAtIndex:indexPath.row];
-    cell.nameLabel.text = user.name;
-    cell.emailLabel.text = user.email;
-    cell.companyCatchPhraseLabel.text = user.company.catchphrase;
+    id object = [self.contentProvider objectAtIndex:indexPath.row];
+    [self.tableContentPresentationController configureTableViewCell:cell withObject:object];
 
     return cell;
 }

@@ -3,14 +3,13 @@
 */
 #import <Foundation/Foundation.h>
 #import "ContentProvider.h"
-#import "AlbumsViewController.h"
 
 @class User;
 @class AlbumController;
 @class PersistenceController;
 
 
-@interface UserAlbumsProvider : NSObject <AlbumsProvider>
+@interface UserAlbumsProvider : NSObject <ContentProvider>
 
 @property(nonatomic, readonly) User *user;
 

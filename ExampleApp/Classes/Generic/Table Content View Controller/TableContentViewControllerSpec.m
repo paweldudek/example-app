@@ -1,6 +1,6 @@
 #import "Specs.h"
 
-#import "UsersViewController.h"
+#import "TableContentViewController.h"
 #import "NSManagedObjectContext+SpecHelpers.h"
 #import "NSManagedObject+SpecHelpers.h"
 #import "User.h"
@@ -9,17 +9,20 @@
 #import "Company.h"
 #import "LoadingView.h"
 
-SpecBegin(UsersViewController)
+SpecBegin(TableContentViewController)
 
-describe(@"UsersViewController", ^{
+describe(@"TableContentViewController", ^{
 
-    __block UsersViewController *sut;
+    __block TableContentViewController *sut;
 
-    __block id mockUsersProvider;
+    __block id mockContentProvider;
+    __block id mockPresentationController;
 
     beforeEach(^{
-        mockUsersProvider = mockProtocol(@protocol(UsersProvider));
-        sut = [[UsersViewController alloc] initWithUsersProvider:mockUsersProvider];
+        mockContentProvider = mockProtocol(@protocol(ContentProvider));
+        mockPresentationController = mockProtocol(@protocol(TableContentPresentationController));
+        sut = [[TableContentViewController alloc] initWithContentProvider:mockContentProvider
+                                       tableContentPresentationController:mockPresentationController];
     });
 
     afterEach(^{
@@ -27,7 +30,7 @@ describe(@"UsersViewController", ^{
     });
 
     it(@"should set itself as delegate of the users provider", ^{
-        [verify(mockUsersProvider) setDelegate:sut];
+        [verify(mockContentProvider) setDelegate:sut];
     });
 
     it(@"should define presentation context", ^{
@@ -47,7 +50,7 @@ describe(@"UsersViewController", ^{
         });
 
         it(@"should tell its users provider to update content", ^{
-            [verify(mockUsersProvider) updateContent];
+            [verify(mockContentProvider) updateContent];
         });
 
         describe(@"overlay view", ^{
@@ -114,16 +117,15 @@ describe(@"UsersViewController", ^{
 
             __block NSIndexPath *indexPath;
 
-            __block UserTableViewCell *tableViewCell;
+            __block UITableViewCell *tableViewCell;
+            __block User *user;
 
             beforeEach(^{
-                User *user = [User specsEmptyObject];
-                user.name = @"Fixture Name";
-                user.email = @"fixture@email.com";
-                user.company = [[Company alloc] initWithName:@"Fixture Company Name"
-                                                 catchphrase:@"Fixture Company Catchphrase"];
-                [given([mockUsersProvider userAtIndex:1]) willReturn:user];
-                [given([mockUsersProvider numberOfUsers]) willReturnInteger:2];
+                user = [User specsEmptyObject];
+                [given([mockContentProvider objectAtIndex:1]) willReturn:user];
+                [given([mockContentProvider numberOfObjects]) willReturnInteger:2];
+
+                [given([mockPresentationController tableViewCellNib]) willReturn:[UINib nibWithNibName:@"UserTableViewCell" bundle:nil]];
 
                 sut.view.frame = CGRectMake(0, 0, 320, 480);
                 [sut.view layoutIfNeeded];
@@ -139,16 +141,8 @@ describe(@"UsersViewController", ^{
                 expect(tableViewCell).to.beKindOf([UserTableViewCell class]);
             });
 
-            it(@"should have title with user name", ^{
-                expect(tableViewCell.nameLabel.text).to.equal(@"Fixture Name");
-            });
-
-            it(@"should have user email as email label text", ^{
-                expect(tableViewCell.emailLabel.text).to.equal(@"fixture@email.com");
-            });
-
-            it(@"should have company catchphrase as company catchphrase label text", ^{
-                expect(tableViewCell.companyCatchPhraseLabel.text).to.equal(@"Fixture Company Catchphrase");
+            it(@"should tell its presentation controller to configure that cell", ^{
+                [verify(mockPresentationController) configureTableViewCell:tableViewCell withObject:user];
             });
         });
         
@@ -157,13 +151,10 @@ describe(@"UsersViewController", ^{
             IN_MEMORY_CORE_DATA
 
             __block User *user;
-            __block id mockDelegate;
 
             beforeEach(^{
-                mockDelegate = mockProtocol(@protocol(UsersViewControllerDelegate));
-                sut.delegate = mockDelegate;
                 user = [User specsEmptyObject];
-                [given([mockUsersProvider userAtIndex:1]) willReturn:user];
+                [given([mockContentProvider objectAtIndex:1]) willReturn:user];
             });
 
             action(^{
@@ -171,8 +162,8 @@ describe(@"UsersViewController", ^{
                                                                                                     inSection:0]];
             });
 
-            it(@"should inform its delegate that given user was selected", ^{
-                [verify(mockDelegate) usersViewController:sut didSelectUser:user];
+            it(@"should inform its presentation controller that given object was selected", ^{
+                [verify(mockPresentationController) selectObject:user];
             });
         });
 
@@ -181,7 +172,7 @@ describe(@"UsersViewController", ^{
             __block NSInteger numberOfRowsInSection;
 
             beforeEach(^{
-                [given([mockUsersProvider numberOfUsers]) willReturnInteger:42];
+                [given([mockContentProvider numberOfObjects]) willReturnInteger:42];
             });
 
             action(^{
@@ -192,15 +183,34 @@ describe(@"UsersViewController", ^{
                 expect(numberOfRowsInSection).to.equal(42);
             });
         });
+
+        describe(@"estimated height", ^{
+
+            __block CGFloat estimatedHeightForRowAtIndexPath;
+
+            beforeEach(^{
+                [given([mockPresentationController estimatedCellHeight]) willReturnFloat:42];
+            });
+
+            action(^{
+                estimatedHeightForRowAtIndexPath = [sut tableView:mock([UITableView class]) estimatedHeightForRowAtIndexPath:[NSIndexPath new]];
+            });
+
+            it(@"should return number of users from its content provider", ^{
+                expect(estimatedHeightForRowAtIndexPath).to.equal(42);
+            });
+        });
     });
 
     describe(@"content view provider delegate", ^{
+
         describe(@"did update content", ^{
 
             __block UITableView *tableView;
 
             beforeEach(^{
-                [given([mockUsersProvider numberOfUsers]) willReturnInteger:2];
+                [given([mockContentProvider numberOfObjects]) willReturnInteger:2];
+                [given([mockPresentationController tableViewCellNib]) willReturn:[UINib nibWithNibName:@"UserTableViewCell" bundle:nil]];
 
                 sut.view.frame = CGRectMake(0, 0, 320, 480);
                 [sut.view layoutIfNeeded];
@@ -211,7 +221,7 @@ describe(@"UsersViewController", ^{
             });
 
             action(^{
-                [given([mockUsersProvider numberOfUsers]) willReturnInteger:5];
+                [given([mockContentProvider numberOfObjects]) willReturnInteger:5];
                 [sut contentProviderDidUpdateContent:nil];
             });
 

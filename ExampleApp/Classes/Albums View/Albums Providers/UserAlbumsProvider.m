@@ -9,6 +9,10 @@
 #import "Album.h"
 
 
+@interface UserAlbumsProvider ()
+@property(nonatomic, strong) NSArray *albums;
+@end
+
 @implementation UserAlbumsProvider
 @synthesize delegate;
 
@@ -35,7 +39,7 @@
 
     [self.albumsController updateAlbumsWithCompletion:^(NSError *error) {
         [self reloadAlbums];
-
+        [self.delegate contentProviderDidFinishUpdatingData:self];
         [self.delegate contentProviderDidUpdateContent:self];
     }];
 }
@@ -46,10 +50,19 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"userIdentifier = %@", self.user.identifier];
     NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]];
 
-    NSArray *allAlbums = [Album allFromContext:self.persistenceController.mainThreadManagedObjectContext
-                                         predicate:predicate
-                                   sortDescriptors:sortDescriptors];
-    NSLog(@"allAlbums = %@", allAlbums);
+    self.albums = [Album allFromContext:self.persistenceController.mainThreadManagedObjectContext
+                              predicate:predicate
+                        sortDescriptors:sortDescriptors];
+}
+
+#pragma mark - Data Source
+
+- (NSUInteger)numberOfObjects {
+    return self.albums.count;
+}
+
+- (id)objectAtIndex:(NSInteger)index {
+    return self.albums[(NSUInteger) index];
 }
 
 @end

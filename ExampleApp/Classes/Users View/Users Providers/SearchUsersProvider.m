@@ -36,18 +36,19 @@
 
 #pragma mark - Users Provider
 
-- (NSUInteger)numberOfUsers {
+- (NSUInteger)numberOfObjects {
     return self.users.count;
 }
 
-- (User *)userAtIndex:(NSInteger)index {
-    return self.users[index];
+- (id)objectAtIndex:(NSInteger)index {
+    return self.users[(NSUInteger) index];
 }
 
 #pragma mark - UISearchUpdater
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name beginsWith[CD] %@", searchController.searchBar.text];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name beginsWith[CD] %@",
+                                                              searchController.searchBar.text];
     NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     self.users = [User allFromContext:self.persistenceController.mainThreadManagedObjectContext
                             predicate:predicate

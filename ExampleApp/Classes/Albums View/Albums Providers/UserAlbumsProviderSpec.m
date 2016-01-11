@@ -42,15 +42,46 @@ describe(@"UserAlbumsProvider", ^{
 
     describe(@"update content", ^{
 
+        __block id mockDelegate;
+
+        beforeEach(^{
+            mockDelegate = mockProtocol(@protocol(ContentProviderDelegate));
+            sut.delegate = mockDelegate;
+        });
+
         action(^{
             [sut updateContent];
         });
 
-        it(@"should tell its album updater to update albums", ^{
+        it(@"should tell its delegate that it will begin updating data", ^{
+            [verify(mockDelegate) contentProviderWillBeginUpdatingData:sut];
+        });
+
+        it(@"should tell its users controller to update users", ^{
             [verify(mockAlbumController) updateAlbumsWithCompletion:anything()];
         });
-    });
 
+        describe(@"when updating finishes", ^{
+
+            action(^{
+                HCArgumentCaptor *captor = [HCArgumentCaptor new];
+                [verify(mockAlbumController) updateAlbumsWithCompletion:(id) captor];
+
+                void (^completion)() = [captor value];
+                if (completion) {
+                    completion();
+                }
+            });
+
+            it(@"should inform its delegate that it updated content", ^{
+                [verify(mockDelegate) contentProviderDidUpdateContent:sut];
+            });
+
+            it(@"should tell its delegate that it finished loading data", ^{
+                [verify(mockDelegate) contentProviderDidFinishUpdatingData:sut];
+            });
+        });
+    });
 });
 
 SpecEnd

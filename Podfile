@@ -8,7 +8,6 @@ inhibit_all_warnings!
 xcodeproj 'ExampleApp'
 
 target 'ExampleApp' do
-  pod 'MTDates'
   pod 'PureLayout'
   pod 'FastImageCache'
   pod 'KZPropertyMapper'

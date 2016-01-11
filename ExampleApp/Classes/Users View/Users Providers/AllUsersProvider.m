@@ -44,11 +44,11 @@
 
 #pragma mark - Users Provider
 
-- (User *)userAtIndex:(NSInteger)index {
+- (id)objectAtIndex:(NSInteger)index {
     return self.allUsers[(NSUInteger) index];
 }
 
-- (NSUInteger)numberOfUsers {
+- (NSUInteger)numberOfObjects {
     return self.allUsers.count;
 }
 

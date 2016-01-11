@@ -2,13 +2,13 @@
 * Copyright (c) 2016 Paweł Dudek. All rights reserved.
 */
 #import <Foundation/Foundation.h>
-#import "UsersViewController.h"
+#import "ContentProvider.h"
 
 @class UserController;
 @class PersistenceController;
 
 
-@interface AllUsersProvider : NSObject <UsersProvider>
+@interface AllUsersProvider : NSObject <ContentProvider>
 
 @property(nonatomic, readonly) UserController *userController;
 
