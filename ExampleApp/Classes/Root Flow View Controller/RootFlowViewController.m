@@ -62,7 +62,8 @@
 #pragma mark - Loading Helpers
 
 - (UsersViewController *)usersViewController {
-    AllUsersProvider *allUsersProvider = [[AllUsersProvider alloc] initWithUserController:self.applicationController.userController];
+    AllUsersProvider *allUsersProvider = [[AllUsersProvider alloc] initWithUserController:self.applicationController.userController
+                                                                    persistenceController:self.applicationController.persistenceController];
     UsersViewController *usersViewController = [[UsersViewController alloc] initWithUsersProvider:allUsersProvider];
     usersViewController.delegate = self;
     return usersViewController;

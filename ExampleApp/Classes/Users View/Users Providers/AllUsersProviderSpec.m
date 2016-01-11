@@ -2,6 +2,7 @@
 
 #import "AllUsersProvider.h"
 #import "UserController.h"
+#import "PersistenceController.h"
 
 SpecBegin(AllUsersProvider)
 
@@ -9,11 +10,14 @@ describe(@"AllUsersProvider", ^{
 
     __block AllUsersProvider *sut;
     __block id mockUserController;
+    __block id mockPersistenceController;
 
     beforeEach(^{
         mockUserController = mock([UserController class]);
+        mockPersistenceController = mock([PersistenceController class]);
 
-        sut = [[AllUsersProvider alloc] initWithUserController:mockUserController];
+        sut = [[AllUsersProvider alloc] initWithUserController:mockUserController
+                                         persistenceController:mockPersistenceController];
     });
 
     afterEach(^{
@@ -22,10 +26,6 @@ describe(@"AllUsersProvider", ^{
 
     it(@"should have a title", ^{
         expect(sut.title).to.equal(@"Users");
-    });
-
-    it(@"should have a persistence controller", ^{
-        expect(NO).to.beTruthy();
     });
 
     describe(@"update content", ^{

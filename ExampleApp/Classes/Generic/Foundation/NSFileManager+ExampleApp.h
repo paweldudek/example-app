@@ -7,4 +7,6 @@
 
 - (NSURL *)applicationSupportDirectoryURL;
 
+- (NSURL *)generateNewTemporaryDirectoryURL;
+
 @end

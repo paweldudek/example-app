@@ -15,10 +15,11 @@
 @implementation AllUsersProvider
 @synthesize delegate;
 
-- (instancetype)initWithUserController:(UserController *)userController {
+- (instancetype)initWithUserController:(UserController *)userController persistenceController:(PersistenceController *)persistenceController {
     self = [super init];
     if (self) {
         _userController = userController;
+        _persistenceController = persistenceController;
     }
 
     return self;
@@ -32,10 +33,10 @@
 
 - (void)updateContent {
     [self.delegate contentProviderWillBeginUpdatingData:self];
-    self.allUsers = [User allFromContext:self.userController.persistenceController.mainThreadManagedObjectContext];
+    self.allUsers = [User allFromContext:self.persistenceController.mainThreadManagedObjectContext];
 
     [self.userController updateUsersWithCompletion:^(NSError *error) {
-        self.allUsers = [User allFromContext:self.userController.persistenceController.mainThreadManagedObjectContext];
+        self.allUsers = [User allFromContext:self.persistenceController.mainThreadManagedObjectContext];
         [self.delegate contentProviderDidUpdateContent:self];
     }];
 }
