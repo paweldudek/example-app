@@ -14,6 +14,7 @@
 		430EF4AA1C41BAD80024D130 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 430EF4A91C41BAD80024D130 /* UserTableViewCell.xib */; };
 		430EF4AC1C4397230024D130 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 430EF4AB1C4397230024D130 /* test.png */; };
 		430EF4AE1C43F6490024D130 /* AlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 430EF4AD1C43F6490024D130 /* AlbumTableViewCell.xib */; };
+		430EF4B01C4403390024D130 /* AlbumPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 430EF4AF1C4403390024D130 /* AlbumPhotoTableViewCell.xib */; };
 		560D4221CDF9DA123FE618DF /* libPods-ExampleAppSpecs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F55EE05A69E79A8796398CE2 /* libPods-ExampleAppSpecs.a */; };
 		B27A902AF126787B26700E36 /* AppDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A99EA5590D5F4BC2C0944 /* AppDelegateSpec.m */; };
 		B27A903D134879C060090558 /* GenericUpdateContentOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9411556C75E4A7986DEC /* GenericUpdateContentOperation.m */; };
@@ -21,6 +22,7 @@
 		B27A90B5761BB9F3519711A4 /* ContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A99FC91806FDF233ED928 /* ContainerView.m */; };
 		B27A90C8E0AC3B720328F4B8 /* SearchUsersProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A942AA0A2C8E4FA054603 /* SearchUsersProvider.m */; };
 		B27A90D0A5A3739856A631DA /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9651A86E7E847B8F76F7 /* UserTableViewCell.m */; };
+		B27A9153B5F2B08125EB4133 /* AlbumsUpdaterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A914E2A35EE04EB7AE7E9 /* AlbumsUpdaterSpec.m */; };
 		B27A91D03C7E83F31912716A /* PendingRequestContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A97BE04D7C38EB69154CA /* PendingRequestContainer.m */; };
 		B27A91E41E567D6C12986A43 /* ImageControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9EAF8FD8F98F67D1B199 /* ImageControllerSpec.m */; };
 		B27A92817B297039D96C8843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27A9D04C65B7AA775F20667 /* Assets.xcassets */; };
@@ -30,18 +32,20 @@
 		B27A93569A3110972B5699DE /* NSManagedObject+SpecHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9E48B3FA3BA5C4254157 /* NSManagedObject+SpecHelpers.m */; };
 		B27A9361B7F857D1ACD96748 /* AlbumsPhotosUpdaterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A965C7143E0BFE58AC0CC /* AlbumsPhotosUpdaterSpec.m */; };
 		B27A939BA9B2DAE4423788A8 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A92FF649D58B50E60FB8F /* Album.m */; };
-		B27A942DE642A93EB55A7431 /* AlbumsUpdaterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A990BB1461C3F5B996F03 /* AlbumsUpdaterSpec.m */; };
 		B27A945B2A42C40FA6B2DF78 /* UsersUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A95EFB24C7F7BACE89B30 /* UsersUpdater.m */; };
 		B27A9470136DEDAC63C43806 /* PersistenceControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A91EC63504A5A1DF6AAFA /* PersistenceControllerSpec.m */; };
 		B27A94CAD314F7300B9A7EDC /* NSManagedObject+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A96C12E7CDCFD6CB1D4C4 /* NSManagedObject+Convenience.m */; };
 		B27A954B445CCB85B0CF512A /* UserPresentationControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9D0FDEF9865E4EE80EDC /* UserPresentationControllerSpec.m */; };
+		B27A955E0C510F149C01EEBB /* AlbumPhotosPresentationControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A91EF04A12AF2CC231185 /* AlbumPhotosPresentationControllerSpec.m */; };
 		B27A958FEF893D4428C593E5 /* AlbumPhotosProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A958E37704BA2D7040577 /* AlbumPhotosProvider.m */; };
 		B27A95EA7621F0748265DE2A /* UserControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A988D6ED64A8EBA313B76 /* UserControllerSpec.m */; };
 		B27A95FEFBE273348A1551FB /* NetworkLayerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A906CD184EF15B87E3EB5 /* NetworkLayerSpec.m */; };
 		B27A963956CA90A13749EA3C /* NetworkLayer+ExampleApp.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9CBD12E917178C3BE30F /* NetworkLayer+ExampleApp.m */; };
 		B27A968C6EAA678EF29853EA /* AlbumsNetworkLayerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A92DEDB6A63B8C3B52203 /* AlbumsNetworkLayerRequest.m */; };
+		B27A96E6A955D7870B20441C /* AlbumsUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9D735097BD56970D17B8 /* AlbumsUpdater.m */; };
 		B27A9700AFB7E9BA7C2A131F /* AlbumsControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9A2EF8AE3E8FF5731A2D /* AlbumsControllerSpec.m */; };
 		B27A9705E47CEA550E33380A /* AllUsersProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A93C9A0D4C21CA3CF78E2 /* AllUsersProvider.m */; };
+		B27A972D75940B3F48E51883 /* AlbumPhotosPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A90775F3A3D92B75CD9BF /* AlbumPhotosPresentationController.m */; };
 		B27A9754E32593A7674ABA2D /* AlbumPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9F8E35003C7E07C71A93 /* AlbumPhoto.m */; };
 		B27A9756A19F90F181B07BFF /* SearchUsersProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A99435989043B342C945D /* SearchUsersProviderSpec.m */; };
 		B27A977FBDAB4FB7A3C0AB24 /* UsersNetworkLayerRequestSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9DE75A1DE77CE15F0538 /* UsersNetworkLayerRequestSpec.m */; };
@@ -81,7 +85,6 @@
 		B27A9EA4A62C9BBE674DCC9F /* UserAlbumsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A940EED42BA5108B3B023 /* UserAlbumsProvider.m */; };
 		B27A9F28B13204801F59E79A /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9151D7AC478C63ADCF41 /* Company.m */; };
 		B27A9F61432D3614077DDC22 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9FADB592B90DA022FBFC /* LoadingView.m */; };
-		B27A9F6A32B69A70497E167B /* AlbumsUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A94A0707D58F63EABEAF7 /* AlbumsUpdater.m */; };
 		B27A9F78E0E6CB887AAA4D23 /* AlbumPhoto+ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A947FA832065861C76C86 /* AlbumPhoto+ImageCache.m */; };
 		B27A9F80762B7A4B9FBE207E /* AlbumPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9437BDCBFE628ECD08AB /* AlbumPresentationController.m */; };
 		B27A9FBCFBE0C7F8065E98E3 /* NSFileManager+ExampleApp.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9A2B7853AE39D3544659 /* NSFileManager+ExampleApp.m */; };
@@ -114,14 +117,18 @@
 		430EF4A91C41BAD80024D130 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		430EF4AB1C4397230024D130 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		430EF4AD1C43F6490024D130 /* AlbumTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumTableViewCell.xib; sourceTree = "<group>"; };
+		430EF4AF1C4403390024D130 /* AlbumPhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumPhotoTableViewCell.xib; sourceTree = "<group>"; };
 		A3FF5BBD07DC7C7977CEFE25 /* Pods-ExampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleApp/Pods-ExampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		A71A72CAA9FB38963B87F341 /* Pods-ExampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExampleApp/Pods-ExampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B27A9016478521C7B4C3FA26 /* UserAlbumsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAlbumsProvider.h; sourceTree = "<group>"; };
 		B27A906CD184EF15B87E3EB5 /* NetworkLayerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkLayerSpec.m; sourceTree = "<group>"; };
+		B27A90775F3A3D92B75CD9BF /* AlbumPhotosPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumPhotosPresentationController.m; sourceTree = "<group>"; };
 		B27A907EAA8D44DEDCE2AE32 /* UserPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPresentationController.h; sourceTree = "<group>"; };
 		B27A9093DD0A6FD85B014C26 /* AlbumController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumController.m; sourceTree = "<group>"; };
 		B27A90A2276A2C9E7281E5C0 /* AbstractAsynchronousOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractAsynchronousOperation.m; sourceTree = "<group>"; };
+		B27A9113F3BB0F387626B83B /* ContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentProvider.h; sourceTree = "<group>"; };
 		B27A91328EC1F861CF1AAFE0 /* NetworkLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkLayer.h; sourceTree = "<group>"; };
+		B27A914E2A35EE04EB7AE7E9 /* AlbumsUpdaterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsUpdaterSpec.m; sourceTree = "<group>"; };
 		B27A9151D7AC478C63ADCF41 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
 		B27A915FC393D39C90E3357E /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
 		B27A915FF4DA6959DAA10251 /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
@@ -129,8 +136,10 @@
 		B27A918C28F157F4D8D5BD43 /* UserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserController.h; sourceTree = "<group>"; };
 		B27A91A09F217D4893E32AD9 /* AlbumsNetworkLayerRequestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsNetworkLayerRequestSpec.m; sourceTree = "<group>"; };
 		B27A91EC63504A5A1DF6AAFA /* PersistenceControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistenceControllerSpec.m; sourceTree = "<group>"; };
+		B27A91EF04A12AF2CC231185 /* AlbumPhotosPresentationControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumPhotosPresentationControllerSpec.m; sourceTree = "<group>"; };
 		B27A922E983F32E3DB078C47 /* AlbumPhotosProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumPhotosProviderSpec.m; sourceTree = "<group>"; };
 		B27A922EE0F5D222E4A36F85 /* UsersUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersUpdater.h; sourceTree = "<group>"; };
+		B27A9235E2A2D565CE6E02F3 /* AlbumPhotosPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumPhotosPresentationController.h; sourceTree = "<group>"; };
 		B27A924654AA680C07BA067E /* NSManagedObjectContext+SpecHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+SpecHelpers.m"; sourceTree = "<group>"; };
 		B27A92B864006E4B2A2C9B0F /* NavigationViewControllerPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewControllerPresenter.m; sourceTree = "<group>"; };
 		B27A92C68B1FD876A26906EF /* TestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAppDelegate.h; sourceTree = "<group>"; };
@@ -148,9 +157,7 @@
 		B27A9437BDCBFE628ECD08AB /* AlbumPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumPresentationController.m; sourceTree = "<group>"; };
 		B27A947A80A496C2C35BBD6C /* NSManagedObject+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Convenience.h"; sourceTree = "<group>"; };
 		B27A947FA832065861C76C86 /* AlbumPhoto+ImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AlbumPhoto+ImageCache.m"; sourceTree = "<group>"; };
-		B27A94A0707D58F63EABEAF7 /* AlbumsUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsUpdater.m; sourceTree = "<group>"; };
 		B27A94E7F117DF867BFA52BA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B27A9521FA7851D6FBC7B3B3 /* ContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentProvider.h; sourceTree = "<group>"; };
 		B27A9553638C60BDCA238025 /* PersistenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistenceController.h; sourceTree = "<group>"; };
 		B27A958E37704BA2D7040577 /* AlbumPhotosProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumPhotosProvider.m; sourceTree = "<group>"; };
 		B27A95A53762736ED393D191 /* AlbumsPhotos.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AlbumsPhotos.JSON; sourceTree = "<group>"; };
@@ -172,6 +179,7 @@
 		B27A9796B8CB1333D51E941B /* NetworkLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkLayer.m; sourceTree = "<group>"; };
 		B27A97AF8877285590A672B8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B27A97BE04D7C38EB69154CA /* PendingRequestContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PendingRequestContainer.m; sourceTree = "<group>"; };
+		B27A97E5ADAC5F2375253670 /* TableContentPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableContentPresentationController.h; sourceTree = "<group>"; };
 		B27A983623674955F29E3F1E /* NavigationViewControllerPresenterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewControllerPresenterSpec.m; sourceTree = "<group>"; };
 		B27A987F3F6E219E0BCB4574 /* NSManagedObject+SpecHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+SpecHelpers.h"; sourceTree = "<group>"; };
 		B27A988D6ED64A8EBA313B76 /* UserControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserControllerSpec.m; sourceTree = "<group>"; };
@@ -180,11 +188,9 @@
 		B27A98E3CA9A49900BC8CBEE /* ApplicationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationController.m; sourceTree = "<group>"; };
 		B27A98E66FD7D831E31566F1 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		B27A98E88234612A6B59C097 /* ViewControllerPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerPresenter.h; sourceTree = "<group>"; };
-		B27A990BB1461C3F5B996F03 /* AlbumsUpdaterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsUpdaterSpec.m; sourceTree = "<group>"; };
 		B27A9911BD67E7B49F70B425 /* UserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserController.m; sourceTree = "<group>"; };
 		B27A993CCCC05D65FE898C3F /* UsersNetworkLayerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersNetworkLayerRequest.h; sourceTree = "<group>"; };
 		B27A99435989043B342C945D /* SearchUsersProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchUsersProviderSpec.m; sourceTree = "<group>"; };
-		B27A994C2DEF795BB19360C6 /* AlbumsUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumsUpdater.h; sourceTree = "<group>"; };
 		B27A99A3B12CFA804A1391A6 /* RootFlowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootFlowViewController.m; sourceTree = "<group>"; };
 		B27A99E0954A58C8DF1DC36F /* FakeOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeOperationQueue.h; sourceTree = "<group>"; };
 		B27A99E4BAF20B61501F8B06 /* FixtureResponses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixtureResponses.h; sourceTree = "<group>"; };
@@ -209,6 +215,7 @@
 		B27A9BCE1D00A494FB848327 /* NetworkLayerExampleAppSharedSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkLayerExampleAppSharedSpec.m; sourceTree = "<group>"; };
 		B27A9BDF7FD8BEA331C4DC59 /* AlbumsPhotosNetworkLayerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsPhotosNetworkLayerRequest.m; sourceTree = "<group>"; };
 		B27A9BE24A87381885187EF7 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		B27A9C05954DED723179B4CC /* AlbumsUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumsUpdater.h; sourceTree = "<group>"; };
 		B27A9C1FAC76A35EF722FD61 /* AlbumsPhotosNetworkLayerRequestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsPhotosNetworkLayerRequestSpec.m; sourceTree = "<group>"; };
 		B27A9C452A466002C8757F50 /* AlbumsPhotosUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsPhotosUpdater.m; sourceTree = "<group>"; };
 		B27A9C5A2C614B082C61B571 /* RootFlowViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootFlowViewControllerSpec.m; sourceTree = "<group>"; };
@@ -220,6 +227,7 @@
 		B27A9D095794E6086C09B7D3 /* PersistenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistenceController.m; sourceTree = "<group>"; };
 		B27A9D0FDEF9865E4EE80EDC /* UserPresentationControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPresentationControllerSpec.m; sourceTree = "<group>"; };
 		B27A9D136EFF1D17CE0A6B22 /* UsersNetworkLayerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersNetworkLayerRequest.m; sourceTree = "<group>"; };
+		B27A9D735097BD56970D17B8 /* AlbumsUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsUpdater.m; sourceTree = "<group>"; };
 		B27A9D886EB5BB4541CAE68C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B27A9DE75A1DE77CE15F0538 /* UsersNetworkLayerRequestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersNetworkLayerRequestSpec.m; sourceTree = "<group>"; };
 		B27A9E29729716BE081C9E0E /* AbstractAsynchronousOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractAsynchronousOperation.h; sourceTree = "<group>"; };
@@ -361,7 +369,6 @@
 				B27A98B2821B1E694284C275 /* ContainerView.h */,
 				B27A99E30A7BADF73C58F541 /* View Controller Presenter */,
 				B27A9A9223ADA7E58BB54452 /* Core Data */,
-				B27A9521FA7851D6FBC7B3B3 /* ContentProvider.h */,
 				B27A9BF8EF3B42AFAA2177EB /* Foundation */,
 				B27A9C7BD74F6999E8685222 /* Network Layer */,
 				B27A9EF11D705A0312243D4E /* Table Content View Controller */,
@@ -385,6 +392,9 @@
 				B27A9C452A466002C8757F50 /* AlbumsPhotosUpdater.m */,
 				B27A9AA32BCE2FFC2C9B021E /* AlbumsPhotosUpdater.h */,
 				B27A965C7143E0BFE58AC0CC /* AlbumsPhotosUpdaterSpec.m */,
+				B27A9C05954DED723179B4CC /* AlbumsUpdater.h */,
+				B27A9D735097BD56970D17B8 /* AlbumsUpdater.m */,
+				B27A914E2A35EE04EB7AE7E9 /* AlbumsUpdaterSpec.m */,
 			);
 			path = Updaters;
 			sourceTree = "<group>";
@@ -402,6 +412,8 @@
 			isa = PBXGroup;
 			children = (
 				B27A9BB147958BA5CCF4AB61 /* Content Providers */,
+				B27A94FC7467C0828DC07D78 /* Presentation Controller */,
+				B27A9C0FB8D7E9A4D326C028 /* View */,
 			);
 			path = "Album Photos View";
 			sourceTree = "<group>";
@@ -412,6 +424,16 @@
 				B27A95FAD5709209CB215513 /* ExampleApp.xcdatamodel */,
 			);
 			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		B27A94FC7467C0828DC07D78 /* Presentation Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B27A90775F3A3D92B75CD9BF /* AlbumPhotosPresentationController.m */,
+				B27A9235E2A2D565CE6E02F3 /* AlbumPhotosPresentationController.h */,
+				B27A91EF04A12AF2CC231185 /* AlbumPhotosPresentationControllerSpec.m */,
+			);
+			path = "Presentation Controller";
 			sourceTree = "<group>";
 		};
 		B27A954F4AAB683A983F965D /* View */ = {
@@ -451,6 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				B27A99AAEE3CCEF53C4A1801 /* Albums View */,
+				B27A9472BD24256A15CE73C7 /* Album Photos View */,
 				B27A924F598CA2E44C3970DD /* Generic */,
 				B27A9CF8D82F49A826E58695 /* Model */,
 				B27A95F4B6FA0097C622B942 /* Persistence Controller */,
@@ -459,7 +482,6 @@
 				B27A97AF8877285590A672B8 /* AppDelegate.h */,
 				B27A94E7F117DF867BFA52BA /* AppDelegate.m */,
 				B27A99EA5590D5F4BC2C0944 /* AppDelegateSpec.m */,
-				B27A9472BD24256A15CE73C7 /* Album Photos View */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -575,9 +597,6 @@
 				B27A9093DD0A6FD85B014C26 /* AlbumController.m */,
 				B27A9AE3BC57939DFA8BF490 /* AlbumController.h */,
 				B27A9A2EF8AE3E8FF5731A2D /* AlbumsControllerSpec.m */,
-				B27A94A0707D58F63EABEAF7 /* AlbumsUpdater.m */,
-				B27A994C2DEF795BB19360C6 /* AlbumsUpdater.h */,
-				B27A990BB1461C3F5B996F03 /* AlbumsUpdaterSpec.m */,
 				B27A9697079ACA55DF179C20 /* Requests */,
 				B27A944CCA33854D787C45D0 /* Updaters */,
 			);
@@ -603,6 +622,14 @@
 				B27A9A5925277BB427A7A90D /* NSFileManager+ExampleApp.h */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		B27A9C0FB8D7E9A4D326C028 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				430EF4AF1C4403390024D130 /* AlbumPhotoTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B27A9C7BD74F6999E8685222 /* Network Layer */ = {
@@ -689,6 +716,8 @@
 				B27A9B7FC33CCE960C9CD1B5 /* TableContentViewController.m */,
 				B27A9AD8D684F3BDEFA1EA4F /* TableContentViewController.h */,
 				B27A9A984C01A44868C9FDEB /* TableContentViewControllerSpec.m */,
+				B27A97E5ADAC5F2375253670 /* TableContentPresentationController.h */,
+				B27A9113F3BB0F387626B83B /* ContentProvider.h */,
 			);
 			path = "Table Content View Controller";
 			sourceTree = "<group>";
@@ -807,6 +836,7 @@
 			files = (
 				430EF4AA1C41BAD80024D130 /* UserTableViewCell.xib in Resources */,
 				430EF4A51C3FFDE50024D130 /* LaunchScreen.storyboard in Resources */,
+				430EF4B01C4403390024D130 /* AlbumPhotoTableViewCell.xib in Resources */,
 				B27A92817B297039D96C8843 /* Assets.xcassets in Resources */,
 				430EF4AE1C43F6490024D130 /* AlbumTableViewCell.xib in Resources */,
 				430EF4A01C3FFCFB0024D130 /* Localizable.strings in Resources */,
@@ -951,7 +981,6 @@
 				B27A9EA4A62C9BBE674DCC9F /* UserAlbumsProvider.m in Sources */,
 				B27A90C8E0AC3B720328F4B8 /* SearchUsersProvider.m in Sources */,
 				B27A98C02A72C6A3FEAE5B78 /* AlbumController.m in Sources */,
-				B27A9F6A32B69A70497E167B /* AlbumsUpdater.m in Sources */,
 				B27A903D134879C060090558 /* GenericUpdateContentOperation.m in Sources */,
 				B27A9E4B5431C4DF6BEF561F /* UsersNetworkLayerRequest.m in Sources */,
 				B27A968C6EAA678EF29853EA /* AlbumsNetworkLayerRequest.m in Sources */,
@@ -963,6 +992,8 @@
 				B27A958FEF893D4428C593E5 /* AlbumPhotosProvider.m in Sources */,
 				B27A9D95E85A2E61F44205CB /* AlbumsPhotosNetworkLayerRequest.m in Sources */,
 				B27A9C11AD1C7C72F5A2A5E4 /* AlbumsPhotosUpdater.m in Sources */,
+				B27A972D75940B3F48E51883 /* AlbumPhotosPresentationController.m in Sources */,
+				B27A96E6A955D7870B20441C /* AlbumsUpdater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -987,7 +1018,6 @@
 				B27A9DE2D6A46082A3D688D4 /* UserAlbumsProviderSpec.m in Sources */,
 				B27A9756A19F90F181B07BFF /* SearchUsersProviderSpec.m in Sources */,
 				B27A9700AFB7E9BA7C2A131F /* AlbumsControllerSpec.m in Sources */,
-				B27A942DE642A93EB55A7431 /* AlbumsUpdaterSpec.m in Sources */,
 				B27A9BFDCA3E837C757AE9BD /* GenericUpdateContentOperationSpec.m in Sources */,
 				B27A977FBDAB4FB7A3C0AB24 /* UsersNetworkLayerRequestSpec.m in Sources */,
 				B27A9D1C4366BC8AFAA5C059 /* AlbumsNetworkLayerRequestSpec.m in Sources */,
@@ -998,6 +1028,8 @@
 				B27A9871BE5C42CBD7DE5F04 /* AlbumPhotosProviderSpec.m in Sources */,
 				B27A93056BEC4C8A10068FF9 /* AlbumsPhotosNetworkLayerRequestSpec.m in Sources */,
 				B27A9361B7F857D1ACD96748 /* AlbumsPhotosUpdaterSpec.m in Sources */,
+				B27A955E0C510F149C01EEBB /* AlbumPhotosPresentationControllerSpec.m in Sources */,
+				B27A9153B5F2B08125EB4133 /* AlbumsUpdaterSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

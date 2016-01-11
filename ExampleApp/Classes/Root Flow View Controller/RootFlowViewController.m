@@ -10,6 +10,7 @@
 #import "UserAlbumsProvider.h"
 #import "SearchUsersProvider.h"
 #import "AlbumPhotosProvider.h"
+#import "AlbumPhotosPresentationController.h"
 
 
 @interface RootFlowViewController ()
@@ -91,9 +92,10 @@
     AlbumPhotosProvider *albumPhotosProvider = [[AlbumPhotosProvider alloc] initWithAlbum:album
                                                                           albumController:self.applicationController.albumController
                                                                     persistenceController:self.applicationController.persistenceController];
-    
+    AlbumPhotosPresentationController *albumPhotosPresentationController = [[AlbumPhotosPresentationController alloc] init];
+
     TableContentViewController *albumsViewController = [[TableContentViewController alloc] initWithContentProvider:albumPhotosProvider
-                                                                                tableContentPresentationController:nil];
+                                                                                tableContentPresentationController:albumPhotosPresentationController];
     [self.viewControllerPresenter pushViewController:albumsViewController animated:YES completion:nil];
 }
 

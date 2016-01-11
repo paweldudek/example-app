@@ -15,6 +15,7 @@
 #import "PersistenceController.h"
 #import "AlbumController.h"
 #import "AlbumPhotosProvider.h"
+#import "AlbumPhotosPresentationController.h"
 
 SpecBegin(RootFlowViewController)
 
@@ -331,18 +332,14 @@ describe(@"RootFlowViewController", ^{
 
             describe(@"presentation controller", ^{
 
-                __block AlbumPresentationController *tableContentPresentationController;
+                __block AlbumPhotosPresentationController *tableContentPresentationController;
 
                 action(^{
                     tableContentPresentationController = (id) [albumsViewController tableContentPresentationController];
                 });
 
                 it(@"should be user presentation controller", ^{
-                    expect(tableContentPresentationController).to.beKindOf([AlbumPresentationController class]);
-                });
-
-                it(@"should have a delegate", ^{
-                    expect(tableContentPresentationController.delegate).to.equal(sut);
+                    expect(tableContentPresentationController).to.beKindOf([AlbumPhotosPresentationController class]);
                 });
             });
 

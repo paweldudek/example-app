@@ -6,6 +6,7 @@
 #import "TableContentViewController.h"
 #import "UserPresentationController.h"
 #import "AlbumPresentationController.h"
+#import "AlbumPhotosPresentationController.h"
 
 @protocol ViewControllerPresenter;
 @class ApplicationController;

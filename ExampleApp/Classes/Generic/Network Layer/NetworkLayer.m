@@ -59,6 +59,8 @@
     PendingRequestContainer *requestContainer = self.pendingRequests[@(task.taskIdentifier)];
     [self.pendingRequests removeObjectForKey:@(task.taskIdentifier)];
 
+    NSLog(@"Received response for URL: %@", task.originalRequest.URL);
+
     id response = requestContainer.responseData;
 
     if (requestContainer.completion) {

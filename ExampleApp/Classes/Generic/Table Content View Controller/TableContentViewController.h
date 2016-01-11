@@ -5,21 +5,7 @@
 #import <UIKit/UIKit.h>
 #import "ContentProvider.h"
 
-@class User;
-@class TableContentViewController;
-
-@protocol TableContentPresentationController <NSObject>
-
-@property(nonatomic, readonly) UINib *tableViewCellNib;
-
-@property(nonatomic, readonly) CGFloat estimatedCellHeight;
-
-- (void)configureTableViewCell:(__kindof UITableViewCell *)tableViewCell withObject:(id)object;
-
-- (void)selectObject:(id)object;
-
-@end
-
+@protocol TableContentPresentationController;
 
 @interface TableContentViewController <__covariant ObjectType> : UIViewController <ContentProviderDelegate, UITableViewDelegate, UITableViewDataSource>
 
